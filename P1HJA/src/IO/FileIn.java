@@ -33,14 +33,5 @@ private FileInputStream file;
 
 	}
 	
-	
-//	public int read() throws IOException {
-//		
-//		int caract = file.read();
-//		if(caract  == '\r')
-//			caract = -1;
-//
-//		return caract;
-//	}
 
 }
