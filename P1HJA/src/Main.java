@@ -10,6 +10,8 @@ public class Main {
 		
 		try {
 			FileIn filein = new FileIn("data/entrada1.txt");
+			Parser.parse(filein.getCartas());
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -2,13 +2,30 @@ package carta;
 
 public class Carta {
 	
-	private char numero[] = {'1', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'};
-	private char palo[] = {'h', 'd', 'c','s'};
+	private char numero;
+	private char palo;
+	private byte codigo;
 	
-	public Carta (char[] num, char[] p){
+	public Carta (char num, char p){
 		
-		num = numero;
-		p = palo;
+		num = this.numero;
+		p = this.palo;
+	}
+	
+	public char getNumero() {
+		return this.numero;
+	}
+	
+	public char getPalo() {
+		return this.palo;
+	}
+	
+	public byte getCodigo() {
+		return this.codigo;
+	}
+	
+	public void setCodigo(byte c) {
+		this.codigo = c;
 	}
 	
 	

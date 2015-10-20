@@ -10,6 +10,7 @@ public class FileIn {
 
 private File finStr;
 private FileInputStream file;
+private String cartas;
 	
 	
 	public FileIn(String param) throws IOException{
@@ -18,12 +19,13 @@ private FileInputStream file;
 			this.finStr = new File(param);
 			this.file = new FileInputStream(this.finStr);
 			
-			int content; 
-			
+			int content;
+			this.cartas = new String();
 					
 			while ((content = file.read()) != -1) {
 				// convert to char and display it
-				System.out.print((char) content);
+				this.cartas += (char) content;
+				
 			}
 		} catch(FileNotFoundException exc) {
 			throw new IOException("Error al acceder al fichero de entrada ("+ param + ")");
@@ -31,6 +33,11 @@ private FileInputStream file;
 			throw new IOException("Error al acceder al fichero de entrada ("+ param + ")");
 		}
 
+	}
+	
+	
+	public String getCartas() {
+		return this.cartas;
 	}
 	
 
