@@ -8,9 +8,14 @@ public class Parser {
 	
 	public static Carta parse(String s) {
 		
+		char a = ' ';
+		char b = ' ';
+		char[] token = s.toCharArray();
 		
-	
-		return new Carta('A', 'c');
+		token[0] = a;
+		token [1] = b;
+		
+		return new Carta(a, b);
 	}
 
 }
