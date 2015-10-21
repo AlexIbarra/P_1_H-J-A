@@ -8,8 +8,8 @@ public class Carta {
 	
 	public Carta (char num, char p){
 		
-		num = this.numero;
-		p = this.palo;
+		this.numero = num;
+		this.palo = p;
 	}
 	
 	public char getNumero() {
