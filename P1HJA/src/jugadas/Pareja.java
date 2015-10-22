@@ -25,18 +25,18 @@ public class Pareja implements Jugadas {
 			else
 				numPareja =0;
 		}
-		
+		/*tenemos que ver bien como hacer la codificacion del valor de las jugadas*/
+		valorJugada = numPareja-1 ; //En este caso de la pareja son iguales-1
 		return new Pareja(numPareja);
 	}
-
+	
 	@Override
 	public int getPuntos() {
-		// TODO Auto-generated method stub
 		return valorJugada;
 	}
 	@Override
 	public Carta getKicker() {
-		// TODO Auto-generated method stub
+		/*Mirar la carta mas alta de la mano y si no pertenece a la pareja devolverla?*/
 		return null;
 	}
 
@@ -45,5 +45,9 @@ public class Pareja implements Jugadas {
 		// TODO Auto-generated method stub
 
 	}
-
+	public String toString(){
+		String t = "Tienes pareja de"+ numPareja;
+		return t;
+		
+	}
 }
