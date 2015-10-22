@@ -11,7 +11,7 @@ public class Main {
 		
 		
 		try {
-			FileIn filein = new FileIn("data/entrada1.txt");
+			FileIn filein = new FileIn("src/data/entrada1.txt");
 			Mano mano = Parser.parse(filein.getCartas());
 			System.out.println("La mano es: " + mano.toString());
 			
