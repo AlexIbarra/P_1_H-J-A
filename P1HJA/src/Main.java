@@ -13,7 +13,6 @@ public class Main {
 		try {
 			FileIn filein = new FileIn("data/entrada1.txt");
 			Mano mano = Parser.parse(filein.getCartas());
-			//System.out.println("La primera carta leida es: "+ mano.getNumero()+ mano.getPalo());
 			System.out.println("La mano es: " + mano.toString());
 			
 		} catch (IOException e) {
