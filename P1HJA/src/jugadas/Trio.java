@@ -1,9 +1,13 @@
 package jugadas;
 
+import java.util.ArrayList;
+
+import carta.Carta;
+
 public class Trio implements Jugadas {
 
 	@Override
-	public Jugadas getJugada() {
+	public Jugadas getJugada(ArrayList<Carta> mano) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -15,9 +19,9 @@ public class Trio implements Jugadas {
 	}
 
 	@Override
-	public int getKicker() {
+	public Carta getKicker() {
 		// TODO Auto-generated method stub
-		return 0;
+		return null;
 	}
 
 	@Override

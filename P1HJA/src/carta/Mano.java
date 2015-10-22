@@ -20,6 +20,7 @@ public class Mano {
 		return this.mano;
 	}
 	
+	
 	public String toString() {
 		String cadena = new String();
 		for(int i=0; i < 5; i++) {

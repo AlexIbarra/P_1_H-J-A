@@ -1,12 +1,11 @@
 package jugadas;
 
+import java.util.ArrayList;
+
+import carta.Carta;
+
 public class DoblePareja implements Jugadas {
 
-	@Override
-	public Jugadas getJugada() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public int getPuntos() {
@@ -15,15 +14,21 @@ public class DoblePareja implements Jugadas {
 	}
 
 	@Override
-	public int getKicker() {
+	public Carta getKicker() {
 		// TODO Auto-generated method stub
-		return 0;
+		return null;
 	}
 
 	@Override
 	public void setValor(int m) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public Jugadas getJugada(ArrayList<Carta> mano) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
