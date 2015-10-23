@@ -37,17 +37,17 @@ public class DoblePareja implements Jugadas {
 		int i=0;
 		boolean encontrado2 = false;
 		boolean encontrado1 = false;
-		numDoble1 =0;
-		numDoble2=0;
+		numDoble1 = 0;
+		numDoble2 = 0;
 		
 		while (i < mano.size() - 3 && !encontrado2){
 			
-			if ((mano.get(i).getNumero() == mano.get(i+1).getNumero()) && !encontrado1){
+			if ((mano.get(i).getCodigo() == mano.get(i+1).getCodigo()) && !encontrado1){
 				/*Con esta asigancion sabes de que numero es la pareja*/
 				numDoble1 = mano.get(i).getNumero();
 				encontrado1 = true;
 			}
-			if ((mano.get(i+2).getNumero() == mano.get(i+3).getNumero()) && encontrado1){
+			if ((mano.get(i+2).getCodigo() == mano.get(i+3).getCodigo()) && encontrado1){
 				numDoble2 = mano.get(i).getNumero();
 				encontrado2 = true;
 			}

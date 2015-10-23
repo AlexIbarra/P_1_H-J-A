@@ -20,13 +20,13 @@ public class Escalera implements Jugadas{
 		
 		while (i < mano.size() -4 && !encontrado){
 			
-			if(mano.get(i).getNumero() == mano.get(i+1).getCodigo() -1
-					&& mano.get(i+1).getNumero() == mano.get(i+2).getCodigo() -1
-					&& mano.get(i+2).getNumero() == mano.get(i+3).getCodigo() -1
-					&& mano.get(i+3).getNumero() == mano.get(i+4).getCodigo() -1){
+			if(mano.get(i).getCodigo() == mano.get(i+1).getCodigo() + 1
+					&& mano.get(i+1).getCodigo() == mano.get(i+2).getCodigo() +1
+					&& mano.get(i+2).getCodigo() == mano.get(i+3).getCodigo() +1
+					&& mano.get(i+3).getCodigo() == mano.get(i+4).getCodigo() +1){
 				
 				encontrado = true;
-				numEscalera = mano.get(i).getNumero();
+				numEscalera = mano.get(i).getCodigo();
 			}
 			else 
 				numEscalera = 0;
