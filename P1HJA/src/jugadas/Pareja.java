@@ -17,14 +17,19 @@ public class Pareja implements Jugadas {
 	public Jugadas getJugada(ArrayList<Carta> mano) {
 		
 		int i=0;
-		while (i < mano.size() - 1){
+		boolean encontrado = false;
+		while (i < mano.size() - 1 && !encontrado){
 			if (mano.get(i).getNumero() == mano.get(i+1).getNumero()){
 				/*Con esta asigancion sabes de que numero es la pareja*/
 				numPareja = mano.get(i).getNumero();
+				encontrado = true;
 			}
 			else
 				numPareja =0;
+			
+			i++;
 		}
+		
 		/*tenemos que ver bien como hacer la codificacion del valor de las jugadas*/
 		valorJugada = numPareja-1 ; //En este caso de la pareja son iguales-1
 		return new Pareja(numPareja);
@@ -46,7 +51,7 @@ public class Pareja implements Jugadas {
 
 	}
 	public String toString(){
-		String t = "Tienes pareja de"+ numPareja;
+		String t = "Pareja de"+ numPareja;
 		return t;
 		
 	}

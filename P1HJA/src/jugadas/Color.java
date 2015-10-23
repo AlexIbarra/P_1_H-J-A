@@ -4,35 +4,34 @@ import java.util.ArrayList;
 
 import carta.Carta;
 
-public class Trio implements Jugadas {
-	
-	private int numTrio;
+public class Color implements Jugadas {
+
+	private int numColor;
 	private int valorJugada;
 	
-	public Trio(int num){
-		
-		num = numTrio;
+	public Color(int num){
+		num = numColor;
 	}
-
 	@Override
 	public Jugadas getJugada(ArrayList<Carta> mano) {
-		int i = 0;
+		int i;
 		boolean encontrado = false;
+		int iguales = 1;
 		
-		while (i < mano.size() -2 && !encontrado){
+		for(i = 0; i < mano.size() -1; i++){
 			
-			if(mano.get(i).getNumero() == mano.get(i+1).getCodigo()
-					&& mano.get(i+1).getNumero() == mano.get(i+2).getCodigo()){
-				encontrado = true;
-				numTrio = mano.get(i).getNumero();
+			if(mano.get(i).getPalo() == mano.get(i+1).getPalo()){
+				iguales++;
 			}
-			else 
-				numTrio = 0;
+			if (iguales == 5){
+				/*Cogemos la mayor carta del color*/
+				numColor = mano.get(0).getNumero();
+			}
+			else
+				numColor = 0;
+		}	
 			
-			i++;
-			
-		}
-		return new Trio(numTrio);
+		return new Color(numColor);
 	}
 
 	@Override
