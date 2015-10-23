@@ -56,7 +56,7 @@ public class Mano {
             }
         }
         // call ordenaMano() method recursively
-        if (0 < j)
+        if (lowerIndex < j)
         	ordenaMano(lowerIndex, j);
         if (i < higherIndex)
         	ordenaMano(i, higherIndex);
