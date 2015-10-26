@@ -1,6 +1,3 @@
-import java.util.HashMap;
-
-import carta.Carta;
 import carta.Mano;
 import jugadas.Color;
 import jugadas.DoblePareja;
@@ -34,12 +31,15 @@ public class ParserJugadas {
 		Jugadas mejorJugada = null;
 		int i=0;
 		boolean encontrado = false;
+		initArray();
 		
 		
 		/* Comprobamos si la jugada es Pareja */
 		esParejas(mano);
 		/* Comprobamos si la jugada es Doble Pareja */
 		esDoblesParejas(mano);
+		
+		esPoker(mano);
 		
 		esTrio(mano);
 		
@@ -51,7 +51,7 @@ public class ParserJugadas {
 		
 		esColor(mano);
 		
-		esPoker(mano);
+		
 		
 		
 
@@ -66,6 +66,8 @@ public class ParserJugadas {
 		
 		return mejorJugada;
 	}
+	
+	
 	
 	
 	private void initArray() {
@@ -91,10 +93,13 @@ public class ParserJugadas {
 		this.arrayEstado[8] = false;
 	}
 	
+	
+	
 	private void addArray(int pos, Jugadas jugada) {
 		this.arrayJugadas[pos] = jugada;
 		this.arrayEstado[pos] = true;
 	}
+	
 	
 	
 	private void esParejas(Mano mano) {
@@ -125,14 +130,16 @@ public class ParserJugadas {
 		
 		while (i < mano.getMano().size() - 1 && !encontrado){
 			
-			if (mano.getMano().get(i).getNumero() == mano.getMano().get(i+1).getNumero()){
+			if (mano.getMano().get(i).getCodigo() == mano.getMano().get(i+1).getCodigo()){
 				
-				if ((i+4 <= mano.getMano().size() - 1) && mano.getMano().get(i+3).getNumero() == mano.getMano().get(i+4).getNumero()){
+				if ((i+4 <= mano.getMano().size() - 1) && mano.getMano().get(i+3).getCodigo() == mano.getMano().get(i+4).getCodigo() &&
+				mano.getMano().get(i+3).getCodigo() != mano.getMano().get(i).getCodigo()){
 
 					encontrado = true;
 					addArray(6, new DoblePareja(mano));
 					
-				} else if ((i+3 <= mano.getMano().size() - 1) && mano.getMano().get(i+2).getNumero() == mano.getMano().get(i+3).getNumero()){
+				} else if ((i+3 <= mano.getMano().size() - 1) && mano.getMano().get(i+2).getCodigo() == mano.getMano().get(i+3).getCodigo() &&
+				mano.getMano().get(i+2).getCodigo() != mano.getMano().get(i).getCodigo()){
 
 					encontrado = true;
 					addArray(6, new DoblePareja(mano));
@@ -169,7 +176,7 @@ public class ParserJugadas {
 	
 	private void esFullHouse(Mano mano) {
 		
-		if(arrayEstado[5] == true && arrayEstado[7] == true) {
+		if(arrayEstado[5] == true && arrayEstado[7] == true && arrayEstado[1] == false) {
 			addArray(2, new FullHouse(mano));
 		}
 	}
@@ -211,6 +218,7 @@ public class ParserJugadas {
 		while (i < mano.getMano().size() - 3 && !encontrado){
 			
 			if(mano.getMano().get(i).getCodigo() == mano.getMano().get(i+1).getCodigo() &&
+			mano.getMano().get(i+1).getCodigo() == mano.getMano().get(i+2).getCodigo() &&
 			mano.getMano().get(i+2).getCodigo() == mano.getMano().get(i+3).getCodigo()){
 				encontrado = true;
 				addArray(1, new Poker(mano));
@@ -218,30 +226,6 @@ public class ParserJugadas {
 			i++;
 			
 		}
-	}
-	
-	
-	
-	private boolean esPoker(Mano mano, Jugadas jugada) {
-		
-		int i = 0;
-		boolean encontrado = false;
-		
-		while (i < mano.getMano().size() - 3 && !encontrado){
-			
-			if(mano.getMano().get(i).getNumero() == mano.getMano().get(i+1).getNumero() && 
-			mano.getMano().get(i+1).getNumero() == mano.getMano().get(i+2).getNumero() &&
-			mano.getMano().get(i+2).getNumero() == mano.getMano().get(i+3).getNumero()) {
-				
-				encontrado = true;
-				jugada = new Poker(mano);
-			}
-			
-			i++;
-			
-		}
-		/*En caso de que numPoker  return 0, es que no hay poker.*/ 
-		return encontrado;
 	}
 	
 	
