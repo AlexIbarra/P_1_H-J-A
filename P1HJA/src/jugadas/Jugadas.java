@@ -14,6 +14,7 @@ public interface Jugadas {
 		/*Obtiene la suma de puntos de la jugada*/
 		public int getPuntos();
 		
+		public void setKicker();		
 		
 		public Carta getKicker();
 		

@@ -3,16 +3,22 @@ package jugadas;
 import java.util.ArrayList;
 
 import carta.Carta;
+import carta.Mano;
 
 public class Poker implements Jugadas {
 
 	private int numPoker;
 	private int valorJugada;
+	private Mano mano;
 	
 	public Poker(int num){
 		
 		num = numPoker;
 		
+	}
+	
+	public Poker(Mano mano) {
+		this.mano = mano;
 	}
 	
 	@Override
@@ -53,6 +59,12 @@ public class Poker implements Jugadas {
 
 	@Override
 	public void setValor(int m) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setKicker() {
 		// TODO Auto-generated method stub
 		
 	}

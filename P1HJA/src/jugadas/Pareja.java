@@ -3,16 +3,25 @@ package jugadas;
 import java.util.ArrayList;
 
 import carta.Carta;
+import carta.Mano;
 
 public class Pareja implements Jugadas {
 		
-	
+	private Mano mano;
 	private int valorJugada;
 	private int numPareja;
+	private Carta kicker;
 	
 	public Pareja(int num){
 		num = numPareja;
 	}
+	
+	public Pareja(Mano mano) {
+		this.mano = mano;
+		
+		
+	}
+	
 	@Override
 	public Jugadas getJugada(ArrayList<Carta> mano) {
 		
@@ -39,10 +48,11 @@ public class Pareja implements Jugadas {
 	public int getPuntos() {
 		return valorJugada;
 	}
+	
 	@Override
 	public Carta getKicker() {
 		/*Mirar la carta mas alta de la mano y si no pertenece a la pareja devolverla?*/
-		return null;
+		return this.kicker;
 	}
 
 	@Override
@@ -50,9 +60,15 @@ public class Pareja implements Jugadas {
 		// TODO Auto-generated method stub
 
 	}
+	
 	public String toString(){
-		String t = "Pareja de"+ numPareja;
-		return t;
+		return "Pareja de" + this.numPareja;		
+	}
+
+	/* Metodo encargado de buscar y asignar el kicker */
+	@Override
+	public void setKicker() {
+	
 		
 	}
 }

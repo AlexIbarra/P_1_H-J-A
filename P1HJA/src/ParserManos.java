@@ -1,7 +1,7 @@
 import carta.Carta;
 import carta.Mano;
 
-public class Parser {
+public class ParserManos {
 	
 	
 	public static Mano parse(String s) {

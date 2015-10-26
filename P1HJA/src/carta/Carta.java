@@ -4,9 +4,9 @@ import java.util.HashMap;
 
 public class Carta {
 	
-	private char numero;
-	private char palo;
-	private int codigo;
+	private char numero; // corresponde con el numero de la carta
+	private char palo;	// palo de la carta
+	private int codigo;	// codigo asignado a la carta (segun su numero)
 	private HashMap<Character, Integer> valores;// = new Hashtable<Integer,String>()
 	
 	public Carta (char num, char p){

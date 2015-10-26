@@ -3,15 +3,24 @@ package jugadas;
 import java.util.ArrayList;
 
 import carta.Carta;
+import carta.Mano;
 
 public class Color implements Jugadas {
 
 	private int numColor;
 	private int valorJugada;
+	private Mano mano;
 	
 	public Color(int num){
 		num = numColor;
 	}
+	
+	
+	public Color(Mano mano) {
+		this.mano = mano;
+	}
+	
+	
 	@Override
 	public Jugadas getJugada(ArrayList<Carta> mano) {
 		int i;
@@ -50,6 +59,13 @@ public class Color implements Jugadas {
 	public void setValor(int m) {
 		// TODO Auto-generated method stub
 
+	}
+
+
+	@Override
+	public void setKicker() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -3,17 +3,25 @@ package jugadas;
 import java.util.ArrayList;
 
 import carta.Carta;
+import carta.Mano;
 
 public class DoblePareja implements Jugadas {
 
 	private int numDoble1, numDoble2;
 	private int valorJugada;
+	private Mano mano;
 	
 	public DoblePareja(int num1,int num2) {
 		// TODO Auto-generated constructor stub
 		num1 = numDoble1;
 		num2 = numDoble2;
 	}
+	
+	public DoblePareja(Mano mano) {
+		this.mano = mano;
+	}
+	
+	
 	@Override
 	public int getPuntos() {
 		
@@ -59,6 +67,12 @@ public class DoblePareja implements Jugadas {
 			return new DoblePareja(numDoble1, numDoble2);
 		else 
 			return new DoblePareja(0, 0);
+	}
+
+	@Override
+	public void setKicker() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

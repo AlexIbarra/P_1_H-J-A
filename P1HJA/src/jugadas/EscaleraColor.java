@@ -3,8 +3,17 @@ package jugadas;
 import java.util.ArrayList;
 
 import carta.Carta;
+import carta.Mano;
 
 public class EscaleraColor implements Jugadas{
+	
+	private Mano mano;
+	
+	public EscaleraColor(Mano mano) {
+		this.mano = mano;
+	}
+	
+	
 
 	@Override
 	public Jugadas getJugada(ArrayList<Carta> mano) {
@@ -26,6 +35,14 @@ public class EscaleraColor implements Jugadas{
 
 	@Override
 	public void setValor(int m) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void setKicker() {
 		// TODO Auto-generated method stub
 		
 	}

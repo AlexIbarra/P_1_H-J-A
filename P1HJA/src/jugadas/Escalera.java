@@ -3,14 +3,21 @@ package jugadas;
 import java.util.ArrayList;
 
 import carta.Carta;
+import carta.Mano;
 
 public class Escalera implements Jugadas{
 
 	private int numEscalera;
 	private int valorJugada;
+	private Mano mano;
 	
 	public Escalera(int num){
 		num = numEscalera;
+	}
+	
+	
+	public Escalera(Mano mano) {
+		this.mano = mano;
 	}
 	
 	@Override
@@ -52,6 +59,13 @@ public class Escalera implements Jugadas{
 
 	@Override
 	public void setValor(int m) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void setKicker() {
 		// TODO Auto-generated method stub
 		
 	}

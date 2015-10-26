@@ -3,16 +3,22 @@ package jugadas;
 import java.util.ArrayList;
 
 import carta.Carta;
+import carta.Mano;
 
 public class FullHouse implements Jugadas {
 	
 	private int trio, pareja;
+	private Mano mano;
 	
 	public FullHouse(int num, int num1) {
 		// TODO Auto-generated constructor stub
 		num = trio;
 		num1 = pareja;
 		
+	}
+	
+	public FullHouse(Mano mano) {
+		this.mano = mano;
 	}
 	
 	
@@ -68,6 +74,12 @@ public class FullHouse implements Jugadas {
 
 	@Override
 	public void setValor(int m) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setKicker() {
 		// TODO Auto-generated method stub
 		
 	}
