@@ -8,13 +8,31 @@ import carta.Mano;
 public class EscaleraColor implements Jugadas{
 	
 	private Mano mano;
+	private int codigo;
 	
 	public EscaleraColor(Mano mano) {
 		this.mano = mano;
+		setCodigo();
 	}
 	
 	
 
+	
+	
+	
+	
+	private void setCodigo() {
+		
+		this.codigo = 0;
+		
+		for(int i=0; i < mano.getMano().size() - 1; i++) {
+			this.codigo += this.mano.getMano().get(i).getNumero();
+		}
+	}
+	
+	
+	
+	
 	@Override
 	public Jugadas getJugada(ArrayList<Carta> mano) {
 		// TODO Auto-generated method stub
