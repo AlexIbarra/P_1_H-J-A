@@ -9,13 +9,20 @@ public class ParserManos {
 	public static ArrayList <Mano> parse(String s) {
 		
 		ArrayList <Mano> arrayManos = new ArrayList<Mano>();
-		int i=0, j=0;
+		int i=0, n=0;
 //		char[] token = s.toCharArray();
 		String[] array = s.split("\n");	
 		char[] token;
+		String[] arrayAux;
 		
+		long time_start, time_end;
+		time_start = System.currentTimeMillis();
 		
 		do {
+			
+			arrayAux = array[i].split(";");
+			n = Integer.parseInt(arrayAux[1]);
+			arrayAux[0]+=arrayAux[2];
 			
 			token = array[i].toCharArray();
 			
@@ -30,9 +37,12 @@ public class ParserManos {
 			/* Ordenamos la mano pasandole los rangos del array de manos */
 			arrayManos.get(i).ordenaMano(0, 4);
 			i++;
-			j+=11;
 			 
 		} while(i < array.length);
+		
+		
+//		time_end = System.currentTimeMillis();
+//		System.out.println("tiempo en generar las manos (ordenadas) "+ ( time_end - time_start ) +" milliseconds");
 		
 		return arrayManos;
 		

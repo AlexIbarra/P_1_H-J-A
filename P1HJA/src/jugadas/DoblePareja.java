@@ -7,8 +7,8 @@ import carta.Mano;
 
 public class DoblePareja implements Jugadas {
 
-	private int numDoble1, numDoble2;
-	private int valorJugada;
+	private int numDoble1, numDoble2; // numDoble1 es la pareja alta
+	private int valorJugada = 2;
 	private Mano mano;
 	
 	public DoblePareja(int num1,int num2) {
@@ -17,8 +17,10 @@ public class DoblePareja implements Jugadas {
 		num2 = numDoble2;
 	}
 	
-	public DoblePareja(Mano mano) {
+	public DoblePareja(Mano mano, int d1, int d2) {
 		this.mano = mano;
+		this.numDoble1 = d1;
+		this.numDoble2 = d2;
 	}
 	
 	

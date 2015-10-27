@@ -8,7 +8,7 @@ import carta.Mano;
 public class Poker implements Jugadas {
 
 	private int numPoker;
-	private int valorJugada;
+	private int valorJugada = 7;
 	private Mano mano;
 	
 	public Poker(int num){
@@ -17,8 +17,9 @@ public class Poker implements Jugadas {
 		
 	}
 	
-	public Poker(Mano mano) {
+	public Poker(Mano mano, int numPoker) {
 		this.mano = mano;
+		this.numPoker = numPoker;
 	}
 	
 	@Override
@@ -67,9 +68,7 @@ public class Poker implements Jugadas {
 	public void setKicker() {
 		// TODO Auto-generated method stub
 		
-	}
-	
-	
+	}	
 
 	
 }

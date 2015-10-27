@@ -8,7 +8,7 @@ import carta.Mano;
 public class Pareja implements Jugadas {
 		
 	private Mano mano;
-	private int valorJugada;
+	private int valorJugada = 1;
 	private int numPareja;
 	private Carta kicker;
 	
@@ -16,10 +16,9 @@ public class Pareja implements Jugadas {
 		num = numPareja;
 	}
 	
-	public Pareja(Mano mano) {
+	public Pareja(Mano mano, int numPareja) {
 		this.mano = mano;
-		
-		
+		this.numPareja = numPareja;
 	}
 	
 	@Override

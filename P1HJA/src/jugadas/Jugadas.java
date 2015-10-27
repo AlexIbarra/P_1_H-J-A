@@ -20,4 +20,6 @@ public interface Jugadas {
 		
 		public void setValor(int m);
 		
+		
+		
 }

@@ -6,6 +6,7 @@ import carta.Carta;
 
 public class Nada implements Jugadas {
 	
+	private int valorJugada = 0;
 	
 	public Nada() {}
 	

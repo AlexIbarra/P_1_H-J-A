@@ -9,6 +9,7 @@ public class EscaleraColor implements Jugadas{
 	
 	private Mano mano;
 	private int codigo;
+	private int valorJugada = 8;
 	
 	public EscaleraColor(Mano mano) {
 		this.mano = mano;

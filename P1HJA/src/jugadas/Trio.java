@@ -8,7 +8,7 @@ import carta.Mano;
 public class Trio implements Jugadas {
 	
 	private int numTrio;
-	private int valorJugada;
+	private int valorJugada = 3;
 	private Mano mano;
 	
 	public Trio(int num){
@@ -16,7 +16,8 @@ public class Trio implements Jugadas {
 		num = numTrio;
 	}
 	
-	public Trio(Mano mano) {
+	public Trio(Mano mano, int numTrio) {
+		this.numTrio = numTrio;
 		this.mano = mano;
 	}
 	

@@ -8,7 +8,7 @@ import carta.Mano;
 public class Color implements Jugadas {
 
 	private int numColor;
-	private int valorJugada;
+	private int valorJugada = 5;
 	private Mano mano;
 	
 	public Color(int num){

@@ -8,7 +8,7 @@ import carta.Mano;
 public class Escalera implements Jugadas{
 
 	private int numEscalera;
-	private int valorJugada;
+	private int valorJugada = 4;
 	private Mano mano;
 	
 	public Escalera(int num){

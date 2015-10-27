@@ -7,18 +7,21 @@ import carta.Mano;
 
 public class FullHouse implements Jugadas {
 	
-	private int trio, pareja;
+	private int numTrio, numPareja;
 	private Mano mano;
+	private int valorJugada = 6;
 	
 	public FullHouse(int num, int num1) {
 		// TODO Auto-generated constructor stub
-		num = trio;
-		num1 = pareja;
+//		num = trio;
+//		num1 = pareja;
 		
 	}
 	
-	public FullHouse(Mano mano) {
+	public FullHouse(Mano mano, int numTrio, int numPareja) {
 		this.mano = mano;
+		this.numTrio = numTrio;
+		this.numPareja = numPareja;
 	}
 	
 	
@@ -35,7 +38,7 @@ public class FullHouse implements Jugadas {
 					&& mano.get(i+1).getNumero() == mano.get(i+2).getCodigo()
 					&& !encontradoTrio){
 				encontradoTrio = true;
-				trio = mano.get(i).getCodigo();
+				numTrio = mano.get(i).getCodigo();
 			}
 			i++;
 			
@@ -46,7 +49,7 @@ public class FullHouse implements Jugadas {
 			if(mano.get(i).getNumero() == mano.get(i+1).getCodigo()
 					&& !encontradoPareja){
 				encontradoPareja = true;
-				trio = mano.get(i).getCodigo();
+				numTrio = mano.get(i).getCodigo();
 			}
 			i++;
 			
@@ -54,7 +57,7 @@ public class FullHouse implements Jugadas {
 		
 		
 		if (encontradoTrio && encontradoPareja)
-			return new FullHouse(trio, pareja);
+			return new FullHouse(numTrio, numPareja);
 		else
 			return new FullHouse(0,0);
 		
