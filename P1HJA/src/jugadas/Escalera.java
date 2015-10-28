@@ -11,14 +11,15 @@ public class Escalera implements Jugadas{
 	private int valorJugada = 4;
 	private Mano mano;
 	
-	public Escalera(int num){
+	public Escalera(Mano mano, int num){
 		num = numEscalera;
-	}
-	
-	
-	public Escalera(Mano mano) {
 		this.mano = mano;
 	}
+	public Escalera (int num){
+		this.numEscalera = num;
+	}
+	
+	
 	
 	@Override
 	public Jugadas getJugada(ArrayList<Carta> mano) {

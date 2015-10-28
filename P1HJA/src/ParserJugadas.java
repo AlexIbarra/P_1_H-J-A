@@ -16,6 +16,10 @@ public class ParserJugadas {
 	private Jugadas[] arrayJugadas = new Jugadas[9];
 	private boolean[] arrayEstado = new boolean[9];
 	private Jugadas mejorJugada;
+	private  boolean encontradoPareja = false;
+	private boolean encontrdoTrio = false;
+	private int Pareja;
+	private int Trio;
 
 	
 	public ParserJugadas() {
@@ -36,67 +40,33 @@ public class ParserJugadas {
 		long time_start, time_end;
 		time_start = System.currentTimeMillis();
 		
-//		initArray();
-		
 		
 		/* Comprobamos el poker */
 		if(!esPoker(mano)) { // si no es poker
+			esParejas(mano);
+			esTrio(mano);
+			if(this.encontradoPareja && this.encontrdoTrio && (this.Trio != this.Pareja)){
+				this.mejorJugada = this.mejorJugada = new FullHouse(mano, this.Trio, this.Pareja);
+			}else if(!esEscaleraColor(mano)){
+				if(!esColor(mano)){
+					
+					if(!esEscalera(mano)){
+						if(encontrdoTrio){
+							this.mejorJugada = new Trio(mano, this.Trio);
+						}else if(!esDoblesParejas(mano)){
+							if(encontradoPareja){
+								this.mejorJugada = new Pareja(mano, this.Pareja);
+							}else{
+								this.mejorJugada = new Nada();
+							}
+						}
+							
+					}
+				}
+			}
 			
-			/* Comprobamos el full*/
-//			if(!esFullHouse(mano)) {
-//				
-//			}
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		/* Comprobamos si la jugada es Pareja */
-//		esParejas(mano);
-//		/* Comprobamos si la jugada es Doble Pareja */
-//		esDoblesParejas(mano);
-//		
-//		esPoker(mano);
-//		
-//		esTrio(mano);
-//		
-//		esEscalera(mano);
-//		
-//		esColor(mano);
-//		
-//		esEscaleraColor(mano);
-//		
-//		esFullHouse(mano);
-		
-		
-		
-		
-
-		/* Recorremos en array en busca de la mejor jugada */
-//		while(i < arrayEstado.length && !encontrado) {
-//			if(arrayEstado[i] == true) {
-//				mejorJugada = arrayJugadas[i];
-//				encontrado = true;
-//			}
-//			i++;	
-//		}
-		
-//		time_end = System.currentTimeMillis();
-//		System.out.println("tiempo en comprobar las manos "+ ( time_end - time_start ) +" milliseconds");
-		
+	
 		return mejorJugada;
 	}
 	
@@ -137,67 +107,68 @@ public class ParserJugadas {
 	
 	private boolean esParejas(Mano mano) {
 
-		int i=0;
+		int i = mano.getMano().size()-1;
 		boolean encontrado = false;
 		
-		while (i < mano.getMano().size() - 1 && !encontrado){
-			if (mano.getMano().get(i).getNumero() == mano.getMano().get(i+1).getNumero()){
+		while (i > 0 && !encontrado) {
+			
+			if(mano.getMano().get(i).getCodigo() == mano.getMano().get(i-1).getCodigo() ){
 				
 				encontrado = true;
-//				addArray(7, new Pareja(mano));
-				this.mejorJugada = new Pareja(mano, mano.getMano().get(i).getNumero());
-			}
-			i++;
+				//this.mejorJugada = new Pareja(mano, mano.getMano().get(i).getCodigo());
+				this.encontradoPareja = true;
+				this.Pareja = mano.getMano().get(i).getCodigo();
+			}			
+			i--;
+			
 		}
 		return encontrado;
 	}
 	
 	
 	
-	private void esDoblesParejas(Mano mano) {
+	private boolean esDoblesParejas(Mano mano) {
 		
-		int i=0;
+		int i=mano.getMano().size()-1;
 		boolean encontrado = false;
+		boolean encontrado2 = false;
+		int pareja = 0;
 		
-		while (i < mano.getMano().size() - 1 && !encontrado){
+		while (i >0 && !encontrado2){
 			
-			if (mano.getMano().get(i).getCodigo() == mano.getMano().get(i+1).getCodigo()){
+			if(mano.getMano().get(i).getCodigo() == mano.getMano().get(i-1).getCodigo() && !encontrado){
+				encontrado = true;
+				pareja = mano.getMano().get(i).getCodigo();
 				
-				if ((i+4 <= mano.getMano().size() - 1) && mano.getMano().get(i+3).getCodigo() == mano.getMano().get(i+4).getCodigo() &&
-				mano.getMano().get(i+3).getCodigo() != mano.getMano().get(i).getCodigo()){
-
-					encontrado = true;
-//					addArray(6, new DoblePareja(mano));
-					
-				} else if ((i+3 <= mano.getMano().size() - 1) && mano.getMano().get(i+2).getCodigo() == mano.getMano().get(i+3).getCodigo() &&
-				mano.getMano().get(i+2).getCodigo() != mano.getMano().get(i).getCodigo()){
-
-					encontrado = true;
-//					addArray(6, new DoblePareja(mano));
-				}
 			}
-			
-			i++;
+			i--;
+			if((mano.getMano().get(i-1).getCodigo() == mano.getMano().get(i-2).getCodigo()) && encontrado){
+				encontrado2 = true;
+				this.mejorJugada= new DoblePareja(mano, pareja, mano.getMano().get(i-1).getCodigo());
+			}
+
 		}	
+		return encontrado2;
 	}
 
 	
 	
 	private boolean esTrio(Mano mano) {
 			
-		int i = 0;
+		int i = mano.getMano().size()-1;
 		boolean encontrado = false;
 		
-		while (i < mano.getMano().size() - 2 && !encontrado){
+		while (i > 1 && !encontrado){
 			
-			if(mano.getMano().get(i).getNumero() == mano.getMano().get(i+1).getNumero() &&
-			mano.getMano().get(i+1).getNumero() == mano.getMano().get(i+2).getNumero()) {
+			if(mano.getMano().get(i).getNumero() == mano.getMano().get(i-2).getNumero()) {
 				
 				encontrado = true;
-				this.mejorJugada = new Trio(mano, mano.getMano().get(i).getNumero());
-//				addArray(5, new Trio(mano));
+				//this.mejorJugada = new Trio(mano, mano.getMano().get(i).getNumero());
+				this.encontrdoTrio = true;
+				this.Trio = mano.getMano().get(i).getNumero();
+
 			}	
-			i++;
+			i--;
 			
 		}
 		return encontrado;
@@ -262,21 +233,25 @@ public class ParserJugadas {
 	
 	
 	
-	private void esEscalera(Mano mano) {
-		
-		if(mano.getMano().get(0).getCodigo() < mano.getMano().get(1).getCodigo() && 
-		mano.getMano().get(1).getCodigo() < mano.getMano().get(2).getCodigo() &&
-		mano.getMano().get(2).getCodigo() < mano.getMano().get(3).getCodigo() &&
-		mano.getMano().get(3).getCodigo() < mano.getMano().get(4).getCodigo()) {
-			
-			addArray(4, new Escalera(mano));
-		}	
-		
+	private boolean esEscalera(Mano mano) {
+		boolean encontrado = false;
+		int i = mano.getMano().size();
+		while ( i > 3 && !encontrado){
+			if(mano.getMano().get(i).getCodigo() == mano.getMano().get(i-1).getCodigo() && 
+			mano.getMano().get(i-1).getCodigo() == mano.getMano().get(i-2).getCodigo() &&
+			mano.getMano().get(i-2).getCodigo() == mano.getMano().get(i-3).getCodigo() &&
+			mano.getMano().get(i-3).getCodigo() == mano.getMano().get(i-4).getCodigo()) {
+				
+				encontrado = true;
+				this.mejorJugada = new Escalera(mano, mano.getMano().get(i).getCodigo());
+			}	
+		}
+		return encontrado;
 	}
 	
 	
 	
-	private void esEscaleraColor(Mano mano) {
+	private boolean esEscaleraColor(Mano mano) {
 			
 //		if(mano.getMano().get(0).getCodigo() < mano.getMano().get(1).getCodigo() && 
 //		mano.getMano().get(1).getCodigo() < mano.getMano().get(2).getCodigo() &&
@@ -296,10 +271,12 @@ public class ParserJugadas {
 			 mano.getMano().get(i).getCodigo() == mano.getMano().get(i-4).getCodigo() -4 && 
 			 mano.getMano().get(i).getPalo() == mano.getMano().get(i-4).getPalo()) {
 				
-				addArray(0, new EscaleraColor(mano));
+				encontrado = true;
+				this.mejorJugada = new EscaleraColor(mano, mano.getMano().get(i).getCodigo());
 			}
+			 i--;
 		}
-
+		return encontrado;
 	}
 	
 	
@@ -308,11 +285,9 @@ public class ParserJugadas {
 		int i = mano.getMano().size()-1;
 		boolean encontrado = false;
 		
-		while (i > 0 && !encontrado) {
+		while (i >= 3 && !encontrado) {
 			
-			if((i-3 > 0) && mano.getMano().get(i).getCodigo() == mano.getMano().get(i-1).getCodigo() &&
-			mano.getMano().get(i-1).getCodigo() == mano.getMano().get(i-2).getCodigo() &&
-			mano.getMano().get(i-2).getCodigo() == mano.getMano().get(i-3).getCodigo()){
+			if(mano.getMano().get(i).getCodigo() == mano.getMano().get(i-3).getCodigo() ){
 				
 				encontrado = true;
 				this.mejorJugada = new Poker(mano, mano.getMano().get(i).getCodigo());
@@ -328,16 +303,18 @@ public class ParserJugadas {
 	private boolean esColor(Mano mano) {
 		
 		boolean encontrado = false;
-		
-		if(mano.getMano().get(0).getPalo() <= mano.getMano().get(1).getPalo() && 
-		mano.getMano().get(1).getPalo() <= mano.getMano().get(2).getPalo() &&
-		mano.getMano().get(2).getPalo() <= mano.getMano().get(3).getPalo() &&
-		mano.getMano().get(3).getPalo() <= mano.getMano().get(4).getPalo()) {
+		int i = mano.getMano().size()-1;
+		while (i >3 && !encontrado){
+			if(mano.getMano().get(i).getPalo() == mano.getMano().get(i-1).getPalo() && 
+			mano.getMano().get(i-1).getPalo() == mano.getMano().get(i-2).getPalo() &&
+			mano.getMano().get(i -2).getPalo() == mano.getMano().get(i-3).getPalo() &&
+			mano.getMano().get(i-3).getPalo() == mano.getMano().get(i-4).getPalo()) {
 				
-			encontrado = true;
-			addArray(3, new Color(mano));
+				encontrado = true;
+				this.mejorJugada = new Color(mano, mano.getMano().get(i).getCodigo());
+			}
+			i--;
 		}
-		
 		/*tenemos que ver bien como hacer la codificacion del valor de las jugadas*/
 		return encontrado;
 	}

@@ -16,8 +16,9 @@ public class Color implements Jugadas {
 	}
 	
 	
-	public Color(Mano mano) {
+	public Color(Mano mano, int numColor) {
 		this.mano = mano;
+		this.numColor = numColor;
 	}
 	
 	

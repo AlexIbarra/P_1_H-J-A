@@ -11,9 +11,9 @@ public class EscaleraColor implements Jugadas{
 	private int codigo;
 	private int valorJugada = 8;
 	
-	public EscaleraColor(Mano mano) {
+	public EscaleraColor(Mano mano, int numEscalera) {
 		this.mano = mano;
-		setCodigo();
+		this.codigo = numEscalera;
 	}
 	
 	
