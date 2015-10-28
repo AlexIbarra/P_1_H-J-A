@@ -33,8 +33,6 @@ public class ParserJugadas {
 	
 	public Jugadas parse(Mano mano) {
 		
-		
-		int i=0;
 		boolean encontrado = false;
 		
 		long time_start, time_end;
@@ -46,7 +44,7 @@ public class ParserJugadas {
 			esParejas(mano);
 			esTrio(mano);
 			if(this.encontradoPareja && this.encontrdoTrio && (this.Trio != this.Pareja)){
-				this.mejorJugada = this.mejorJugada = new FullHouse(mano, this.Trio, this.Pareja);
+				this.mejorJugada = new FullHouse(mano, this.Trio, this.Pareja);
 			}else if(!esEscaleraColor(mano)){
 				if(!esColor(mano)){
 					
