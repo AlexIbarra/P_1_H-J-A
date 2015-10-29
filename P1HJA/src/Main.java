@@ -20,7 +20,7 @@ public class Main {
 			
 			
 			
-			FileIn filein = new FileIn("src/data/entrada4.txt");
+			FileIn filein = new FileIn("src/data/entrada3.txt");
 			/* Recojo las partidas que se van a ejecutar */
 			ArrayList<Partida> partidas = ParserManos.parse(filein.getCartas());
 

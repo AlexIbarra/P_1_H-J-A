@@ -54,29 +54,45 @@ public class ParserManos {
 				
 				limit = token.length;
 			
-				Jugador jugador = new Jugador(new Mano());
+				Jugador jugador = new Jugador();
 				
-				jugador.getMano().setMano(new Carta(token[j+2], token[j+3]));
-				jugador.getMano().setMano(new Carta(token[j+4], token[j+5]));
-				jugador.getMano().setMano(new Carta(token[limit-2], token[limit-1]));
-				jugador.getMano().setMano(new Carta(token[limit-4], token[limit-3]));
-				jugador.getMano().setMano(new Carta(token[limit-6], token[limit-5]));
+				Mano mano = new Mano();
+				
+				
+				mano.setMano(new Carta(token[j+2], token[j+3]));
+				mano.setMano(new Carta(token[j+4], token[j+5]));
+				mano.setMano(new Carta(token[limit-2], token[limit-1]));
+				mano.setMano(new Carta(token[limit-4], token[limit-3]));
+				mano.setMano(new Carta(token[limit-6], token[limit-5]));
+				
+				
+				
+//				jugador.getMano().setMano(new Carta(token[j+2], token[j+3]));
+//				jugador.getMano().setMano(new Carta(token[j+4], token[j+5]));
+//				jugador.getMano().setMano(new Carta(token[limit-2], token[limit-1]));
+//				jugador.getMano().setMano(new Carta(token[limit-4], token[limit-3]));
+//				jugador.getMano().setMano(new Carta(token[limit-6], token[limit-5]));
 				
 				if(caso2 || caso3) {
-					jugador.getMano().setMano(new Carta(token[limit-10], token[limit-9]));
-					jugador.getMano().setMano(new Carta(token[limit-8], token[limit-7]));
+//					jugador.getMano().setMano(new Carta(token[limit-10], token[limit-9]));
+//					jugador.getMano().setMano(new Carta(token[limit-8], token[limit-7]));
+					mano.setMano(new Carta(token[limit-10], token[limit-9]));
+					mano.setMano(new Carta(token[limit-8], token[limit-7]));
 				}
 				
 				
-				limit = jugador.getMano().getMano().size()-1;
+//				limit = jugador.getMano().getMano().size()-1;
+				limit = mano.getMano().size() -1;
 				
 				/* Ordenamos la mano pasandole los rangos del array de manos */
-				jugador.getMano().ordenaMano(0, limit);
+//				jugador.getMano().ordenaMano(0, limit);
+				mano.ordenaMano(0, limit);
 				
 				if(caso3)
 					j+=6;
 				
 				/* Añado los jugadores de cada partida */
+				jugador.setMano(mano);
 				arrayPartidas.get(i).addJugador(jugador);
 			}			
 			i++;

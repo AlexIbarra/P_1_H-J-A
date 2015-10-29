@@ -14,6 +14,8 @@ public class Jugador {
 		this.mano = mano;
 	}
 	
+	public Jugador() {}
+	
 	
 	public Mano getMano() {
 		return this.mano;
@@ -29,6 +31,10 @@ public class Jugador {
 	
 	public int getPuesto() {
 		return this.puesto;
+	}
+	
+	public void setMano(Mano mano) {
+		this.mano = mano;
 	}
 
 }
