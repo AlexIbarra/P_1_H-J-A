@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import IO.FileIn;
+import IO.FileOut;
 import carta.Carta;
 import carta.Mano;
 import jugadas.Jugadas;
@@ -20,17 +21,21 @@ public class Main {
 			
 			
 			
-			FileIn filein = new FileIn("src/data/entrada1.txt");
-			/* Recojo las partidas que se van a ejecutar */
-			ArrayList<Partida> partidas = ParserManos.parse(filein.getCartas());
-
-			for(int k=0; k < partidas.size(); k++) {
-				for(int i=0; i < partidas.get(k).getNumJugadores(); i++) {
-					Jugadas jugada = parserJ.parse(partidas.get(k).getJugador(i).getMano());
-					partidas.get(k).getJugador(i).setMejorJugada(jugada);
-//					System.out.println("La mejor jugada es: " + jugada.toString());
-				}			
+			FileIn filein = new FileIn("src/data/entrada4.txt");
+			FileOut fileout = new FileOut("src/data/salida4.txt");
+			String partidaLeida;
+			
+			while((partidaLeida=filein.readPartida()) != null){
+				
+				Partida partidaJugar = ParserManos.parse(partidaLeida, filein.getNumJugadores());
+				for(int i=0; i < filein.getNumJugadores(); i++) {
+					Jugadas mejorJugada = parserJ.parse(partidaJugar.getJugador(i).getMano());
+					partidaJugar.getJugador(i).setMejorJugada(mejorJugada);
+//					System.out.println("La mejor jugada es: " + mejorJugada.toString());
+					fileout.writePartida(mejorJugada.toString());
+				}
 			}
+			
 			
 			
 			

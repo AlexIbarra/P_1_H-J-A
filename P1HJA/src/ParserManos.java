@@ -7,89 +7,120 @@ import jugadores.Jugador;
 public class ParserManos {
 	
 	
-	public static ArrayList <Partida> parse(String s) {
+	public static Partida parse(String s, int numjug) {
 		
-		ArrayList <Partida> arrayPartidas = new ArrayList<Partida>();
-		int i=0, j=-2;
-		String[] array = s.split("\n");	
-		char[] token;
-		String[] arrayAux;
-		String cadena=null;
-		int limit, numjugadores=0, numcartas=0, partida=0;
-		boolean caso2 = false, caso3 = false;
+		Partida partida = new Partida();
+		int i=0, limit;
+			
+		String[] array = s.split("\n");		
+		char[] token = array[0].toCharArray();
 		
-		do {
+		/* Caso 3 */
+		if(token[1] == ';') {
 			
-			/* Creo una nueva partida */
-			arrayPartidas.add(new Partida());
-			
-			/* Tipo entrada3 */
-			if(array[i].length() == 40) {
-				j=0;
-				arrayAux = array[i].split(";");
-				numjugadores = Integer.parseInt(arrayAux[0]); // numero de jugadores de la mano
-				cadena = arrayAux[1] + arrayAux[2] + arrayAux[3] + arrayAux[4] + arrayAux[5];
-				caso3 = true;
-				token = cadena.toCharArray();
-			}
-			/* Tipo entrada2 */
-			else if(array[i].length() >= 13 && array[i].length() < 18) {
-				j=-2;
-				arrayAux = array[i].split(";");
-				numcartas = Integer.parseInt(arrayAux[1]); // numero de cartas de la mano
-				if(numcartas > 3)
-					caso2 = true;
-				cadena = arrayAux[0] + arrayAux[2];
-				numjugadores = 1;
-				token = cadena.toCharArray();
-			}
-			else {
-				j=-2;
-				token = array[0].toCharArray();
-				numjugadores = 1;
-			}
+			i=4;
+			for(int k=0; k < numjug; k++) {
 				
-			
-			for(int k=0; k < numjugadores; k++) {
-				
-				limit = token.length;
-			
 				Jugador jugador = new Jugador();
+				Mano manoJugador = new Mano();
 				
-				Mano mano = new Mano();
+				/* Primero leo las cartas de la mesa */
 				
-				
-				mano.setMano(new Carta(token[j+2], token[j+3]));
-				mano.setMano(new Carta(token[j+4], token[j+5]));
-				mano.setMano(new Carta(token[limit-2], token[limit-1]));
-				mano.setMano(new Carta(token[limit-4], token[limit-3]));
-				mano.setMano(new Carta(token[limit-6], token[limit-5]));
-				
-				
-				if(caso2 || caso3) {
-					mano.setMano(new Carta(token[limit-10], token[limit-9]));
-					mano.setMano(new Carta(token[limit-8], token[limit-7]));
+				/* RIVER */
+				if(token[token.length-11] == ';') {
+					manoJugador.setMano(new Carta(token[token.length-2], token[token.length-1]));
+					manoJugador.setMano(new Carta(token[token.length-4], token[token.length-3]));
+					manoJugador.setMano(new Carta(token[token.length-6], token[token.length-5]));
+					manoJugador.setMano(new Carta(token[token.length-8], token[token.length-7]));
+					manoJugador.setMano(new Carta(token[token.length-10], token[token.length-9]));
+				}
+				/* TURN */
+				else if(token[token.length-9] == ';') {
+					manoJugador.setMano(new Carta(token[token.length-2], token[token.length-1]));
+					manoJugador.setMano(new Carta(token[token.length-4], token[token.length-3]));
+					manoJugador.setMano(new Carta(token[token.length-6], token[token.length-5]));
+					manoJugador.setMano(new Carta(token[token.length-8], token[token.length-7]));
+				}
+				/* FLOP */
+				else {
+					manoJugador.setMano(new Carta(token[token.length-2], token[token.length-1]));
+					manoJugador.setMano(new Carta(token[token.length-4], token[token.length-3]));
+					manoJugador.setMano(new Carta(token[token.length-6], token[token.length-5]));
 				}
 				
+				/* Ahora leo las cartas de cada jugador */
+				manoJugador.setMano(new Carta(token[i], token[i+1]));
+				manoJugador.setMano(new Carta(token[i+2], token[i+3]));
 				
-				limit = mano.getMano().size() -1;
+				limit = manoJugador.getMano().size() -1;
 				
 				/* Ordenamos la mano pasandole los rangos del array de manos */
-				mano.ordenaMano(0, limit);
+				manoJugador.ordenaMano(0, limit);
 				
-				if(caso3)
-					j+=6;
 				
 				/* Añado los jugadores de cada partida */
-				jugador.setMano(mano);
-				arrayPartidas.get(i).addJugador(jugador);
-			}			
-			i++;
+				jugador.setMano(manoJugador);
+				partida.addJugador(jugador);
+				
+				
+				/* Incremento el iterador para saltarme el ; */
+				i+=7;
+			}
 			
-			 
-		} while(i < array.length);
+			
+		}
+		/* Caso 2 */
+		else if(token[4] == ';') {
+			i=7;
+				
+			Jugador jugador = new Jugador();
+			Mano manoJugador = new Mano();
+			
+			manoJugador.setMano(new Carta(token[0], token[1]));
+			manoJugador.setMano(new Carta(token[2], token[3]));
+			
+			/* Leo las cartas que hay en la mesa (flop, turn o river) */
+			int mesa = Character.getNumericValue(token[5]);
+			for(int j=0; j < mesa; j++) {
+				manoJugador.setMano(new Carta(token[i], token[i+1]));
+				i+=2;
+			}
+			
+			limit = manoJugador.getMano().size() -1;
+			
+			/* Ordenamos la mano pasandole los rangos del array de manos */
+			manoJugador.ordenaMano(0, limit);
+			
+			
+			/* Añado los jugadores de cada partida */
+			jugador.setMano(manoJugador);
+			partida.addJugador(jugador);				
+			
+		}
+		/* Caso 1*/
+		else {
+			Jugador jugador = new Jugador();
+			Mano manoJugador = new Mano();
+			
+			manoJugador.setMano(new Carta(token[0], token[1]));
+			manoJugador.setMano(new Carta(token[2], token[3]));
+			manoJugador.setMano(new Carta(token[4], token[5]));
+			manoJugador.setMano(new Carta(token[6], token[7]));
+			manoJugador.setMano(new Carta(token[8], token[9]));
+			
+			limit = manoJugador.getMano().size() -1;
+			
+			/* Ordenamos la mano pasandole los rangos del array de manos */
+			manoJugador.ordenaMano(0, limit);
+			
+			
+			/* Añado los jugadores de cada partida */
+			jugador.setMano(manoJugador);
+			partida.addJugador(jugador);
+			
+		}
 		
-		return arrayPartidas;
+		return partida;
 		
 	}
 
