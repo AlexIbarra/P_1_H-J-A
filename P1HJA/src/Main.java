@@ -24,13 +24,13 @@ public class Main {
 			/* Recojo las partidas que se van a ejecutar */
 			ArrayList<Partida> partidas = ParserManos.parse(filein.getCartas());
 
-//			for(int k=0; k < partidas.size(); k++) {
-//				for(int i=0; i < partidas.get(k).getNumJugadores(); i++) {
-//					Jugadas jugada = parserJ.parse(partidas.get(k).getJugador(i).getMano());
-//					partidas.get(k).getJugador(i).setMejorJugada(jugada);
-//					System.out.println("La mejor jugada es: " + jugada.toString());
-//				}			
-//			}
+			for(int k=0; k < partidas.size(); k++) {
+				for(int i=0; i < partidas.get(k).getNumJugadores(); i++) {
+					Jugadas jugada = parserJ.parse(partidas.get(k).getJugador(i).getMano());
+					partidas.get(k).getJugador(i).setMejorJugada(jugada);
+					System.out.println("La mejor jugada es: " + jugada.toString());
+				}			
+			}
 			
 			
 			
