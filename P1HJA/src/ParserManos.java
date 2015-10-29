@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 import carta.Carta;
 import carta.Mano;
 import jugadores.Jugador;

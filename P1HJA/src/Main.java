@@ -15,14 +15,16 @@ public class Main {
 		ParserJugadas parserJ = new ParserJugadas();
 		
 		
+		
+		
 		try {
 			long time_start, time_end;
 			time_start = System.currentTimeMillis();
 			
 			
 			
-			FileIn filein = new FileIn("src/data/entrada4.txt");
-			FileOut fileout = new FileOut("src/data/salida4.txt");
+			FileIn filein = new FileIn("src/data/"+args[0]);
+			FileOut fileout = new FileOut("src/data/"+args[1]);
 			String partidaLeida;
 			
 			while((partidaLeida=filein.readPartida()) != null){
@@ -31,12 +33,11 @@ public class Main {
 				for(int i=0; i < filein.getNumJugadores(); i++) {
 					Jugadas mejorJugada = parserJ.parse(partidaJugar.getJugador(i).getMano());
 					partidaJugar.getJugador(i).setMejorJugada(mejorJugada);
-//					System.out.println("La mejor jugada es: " + mejorJugada.toString());
 					fileout.writePartida(mejorJugada.toString());
 				}
 			}
 			
-			
+			fileout.closeFile();
 			
 			
 			time_end = System.currentTimeMillis();

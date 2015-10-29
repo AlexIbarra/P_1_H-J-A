@@ -41,6 +41,8 @@ private BufferedReader br;
 			this.token = this.cadena.toCharArray();
 			if(this.token[1] == ';')
 				this.numJugadores = Character.getNumericValue(this.token[0]);
+			else
+				this.numJugadores = 1;
 				
 			if(this.cadena == null)
 				this.fr.close();

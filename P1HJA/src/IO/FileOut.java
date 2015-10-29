@@ -1,42 +1,43 @@
 package IO;
 
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 
 public class FileOut {
 	
 	private String file;
+	private FileWriter fichero;
+	private PrintWriter pw;
 	
 	public FileOut(String file) {
 		this.file = file;
+		
+		try {
+			this.fichero = new FileWriter(this.file);
+			this.pw = new PrintWriter(this.fichero);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
 	}
 	
 	
 	
 	public void writePartida(String msg) {
-		
-		FileWriter fichero = null;
-        PrintWriter pw = null;
-        try
-        {
-            fichero = new FileWriter(this.file);
-            pw = new PrintWriter(fichero);
- 
-            for (int i = 0; i < 10; i++)
-                pw.println(msg);
- 
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-           try {
-           // Nuevamente aprovechamos el finally para 
-           // asegurarnos que se cierra el fichero.
-           if (null != fichero)
-              fichero.close();
-           } catch (Exception e2) {
-              e2.printStackTrace();
-           }
-        }
+
+        pw.println(msg);
+
+	}
+	
+	public void closeFile() {
+		try {
+			this.fichero.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
