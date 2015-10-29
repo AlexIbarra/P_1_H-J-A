@@ -15,7 +15,7 @@ public class ParserManos {
 		char[] token;
 		String[] arrayAux;
 		String cadena=null;
-		int limit, numjugadores=0, numcartas=0;
+		int limit, numjugadores=0, numcartas=0, partida=0;
 		boolean caso2 = false, caso3 = false;
 		
 		do {
@@ -24,7 +24,7 @@ public class ParserManos {
 			arrayPartidas.add(new Partida());
 			
 			/* Tipo entrada3 */
-			if(array[0].length() == 40) {
+			if(array[i].length() == 40) {
 				j=0;
 				arrayAux = array[i].split(";");
 				numjugadores = Integer.parseInt(arrayAux[0]); // numero de jugadores de la mano
@@ -33,7 +33,7 @@ public class ParserManos {
 				token = cadena.toCharArray();
 			}
 			/* Tipo entrada2 */
-			else if(array[0].length() >= 13 && array[0].length() < 18) {
+			else if(array[i].length() >= 13 && array[i].length() < 18) {
 				j=-2;
 				arrayAux = array[i].split(";");
 				numcartas = Integer.parseInt(arrayAux[1]); // numero de cartas de la mano
