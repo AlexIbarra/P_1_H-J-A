@@ -20,7 +20,7 @@ public class Main {
 			
 			
 			
-			FileIn filein = new FileIn("src/data/entrada3.txt");
+			FileIn filein = new FileIn("src/data/entrada1.txt");
 			/* Recojo las partidas que se van a ejecutar */
 			ArrayList<Partida> partidas = ParserManos.parse(filein.getCartas());
 
@@ -28,7 +28,7 @@ public class Main {
 				for(int i=0; i < partidas.get(k).getNumJugadores(); i++) {
 					Jugadas jugada = parserJ.parse(partidas.get(k).getJugador(i).getMano());
 					partidas.get(k).getJugador(i).setMejorJugada(jugada);
-					System.out.println("La mejor jugada es: " + jugada.toString());
+//					System.out.println("La mejor jugada es: " + jugada.toString());
 				}			
 			}
 			
@@ -38,7 +38,6 @@ public class Main {
 			System.out.println("the task has taken "+ ( time_end - time_start ) +" milliseconds");
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

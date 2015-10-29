@@ -27,6 +27,7 @@ private String cartas;
 				this.cartas += (char) content;
 				
 			}
+			this.file.close();
 		} catch(FileNotFoundException exc) {
 			throw new IOException("Error al acceder al fichero de entrada ("+ param + ")");
 		} catch (IOException e) {
