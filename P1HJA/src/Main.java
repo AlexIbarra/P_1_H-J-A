@@ -41,7 +41,7 @@ public class Main {
 			
 			
 			time_end = System.currentTimeMillis();
-			System.out.println("the task has taken "+ ( time_end - time_start ) +" milliseconds");
+			System.out.println("Tiempo transcurrido: "+ ( time_end - time_start ) +" milisegundos");
 			
 		} catch (IOException e) {
 			e.printStackTrace();

@@ -8,3 +8,12 @@ jugadas.Poker@3067ed13
 jugadas.Poker@76fd9338
 jugadas.Poker@1cc7e90
 jugadas.Poker@188920dc
+jugadas.FullHouse@11613fe7
+jugadas.Nada@6da13f3d
+jugadas.Nada@753ef605
+jugadas.Nada@7889fe65
+jugadas.Nada@2b9cd6b6
+jugadas.Nada@45d45d18
+jugadas.Nada@792bf678
+jugadas.Nada@35427e6e
+jugadas.Nada@207a8313

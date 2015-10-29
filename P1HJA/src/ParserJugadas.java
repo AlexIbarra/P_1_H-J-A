@@ -44,6 +44,8 @@ public class ParserJugadas {
 		initMano(mano);
 		
 		boolean encontrado = false;
+		this.encontradoPareja = false;
+		this.encontrdoTrio = false;
 		
 		long time_start, time_end;
 		time_start = System.currentTimeMillis();
