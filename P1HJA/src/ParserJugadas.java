@@ -13,8 +13,8 @@ import jugadas.Trio;
 public class ParserJugadas {
 	
 	//private HashMap<Jugadas, Boolean> arrayJugadas;
-	private Jugadas[] arrayJugadas = new Jugadas[9];
-	private boolean[] arrayEstado = new boolean[9];
+//	private Jugadas[] arrayJugadas = new Jugadas[9];
+//	private boolean[] arrayEstado = new boolean[9];
 	private Jugadas mejorJugada;
 	private  boolean encontradoPareja = false;
 	private boolean encontrdoTrio = false;
@@ -25,7 +25,7 @@ public class ParserJugadas {
 	public ParserJugadas() {
 		//arrayJugadas = new HashMap<Jugadas, Boolean>();
 		
-		initArray();
+//		initArray();
 	}
 	
 	
@@ -71,35 +71,35 @@ public class ParserJugadas {
 	
 	
 	
-	private void initArray() {
-	
-		
-		this.arrayJugadas[0] = new Nada(); // Escalera de color
-		this.arrayEstado[0] = false;
-		this.arrayJugadas[1] = new Nada(); // Poker
-		this.arrayEstado[1] = false;
-		this.arrayJugadas[2] = new Nada(); // Full
-		this.arrayEstado[2] = false;
-		this.arrayJugadas[3] = new Nada(); // Color
-		this.arrayEstado[3] = false;
-		this.arrayJugadas[4] = new Nada(); // Escalera
-		this.arrayEstado[4] = false;
-		this.arrayJugadas[5] = new Nada(); // Trio
-		this.arrayEstado[5] = false;
-		this.arrayJugadas[6] = new Nada(); // Doble pareja
-		this.arrayEstado[6] = false;
-		this.arrayJugadas[7] = new Nada(); // Pareja
-		this.arrayEstado[7] = false;
-		this.arrayJugadas[8] = new Nada(); // Carta mas alta
-		this.arrayEstado[8] = false;
-	}
-	
-	
-	
-	private void addArray(int pos, Jugadas jugada) {
-		this.arrayJugadas[pos] = jugada;
-		this.arrayEstado[pos] = true;
-	}
+//	private void initArray() {
+//	
+//		
+//		this.arrayJugadas[0] = new Nada(); // Escalera de color
+//		this.arrayEstado[0] = false;
+//		this.arrayJugadas[1] = new Nada(); // Poker
+//		this.arrayEstado[1] = false;
+//		this.arrayJugadas[2] = new Nada(); // Full
+//		this.arrayEstado[2] = false;
+//		this.arrayJugadas[3] = new Nada(); // Color
+//		this.arrayEstado[3] = false;
+//		this.arrayJugadas[4] = new Nada(); // Escalera
+//		this.arrayEstado[4] = false;
+//		this.arrayJugadas[5] = new Nada(); // Trio
+//		this.arrayEstado[5] = false;
+//		this.arrayJugadas[6] = new Nada(); // Doble pareja
+//		this.arrayEstado[6] = false;
+//		this.arrayJugadas[7] = new Nada(); // Pareja
+//		this.arrayEstado[7] = false;
+//		this.arrayJugadas[8] = new Nada(); // Carta mas alta
+//		this.arrayEstado[8] = false;
+//	}
+//	
+//	
+//	
+//	private void addArray(int pos, Jugadas jugada) {
+//		this.arrayJugadas[pos] = jugada;
+//		this.arrayEstado[pos] = true;
+//	}
 	
 	
 	
