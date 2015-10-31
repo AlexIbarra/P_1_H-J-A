@@ -8,7 +8,7 @@ import carta.Mano;
 public class Pareja implements Jugadas {
 		
 	private Mano mano;
-	private int valorJugada = 1;
+	private int valorJugada = 2;
 	private int numPareja;
 	private Carta kicker;
 	
@@ -44,7 +44,7 @@ public class Pareja implements Jugadas {
 	}
 	
 	@Override
-	public int getPuntos() {
+	public int getValorJugada() {
 		return valorJugada;
 	}
 	
@@ -55,9 +55,9 @@ public class Pareja implements Jugadas {
 	}
 
 	@Override
-	public void setValor(int m) {
+	public void setValor() {
 		// TODO Auto-generated method stub
-
+		
 	}
 	
 	public String toString(){
@@ -69,5 +69,11 @@ public class Pareja implements Jugadas {
 	public void setKicker() {
 	
 		
+	}
+
+	@Override
+	public int getNumJugada() {
+		// TODO Auto-generated method stub
+		return this.numPareja;
 	}
 }

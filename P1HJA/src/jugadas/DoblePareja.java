@@ -8,7 +8,7 @@ import carta.Mano;
 public class DoblePareja implements Jugadas {
 
 	private int numDoble1, numDoble2; // numDoble1 es la pareja alta
-	private int valorJugada = 2;
+	private int valorJugada = 3;
 	private Mano mano;
 	
 	public DoblePareja(int num1,int num2) {
@@ -25,9 +25,9 @@ public class DoblePareja implements Jugadas {
 	
 	
 	@Override
-	public int getPuntos() {
+	public int getValorJugada() {
 		
-		return 0;
+		return this.valorJugada;
 	}
 
 	@Override
@@ -37,9 +37,9 @@ public class DoblePareja implements Jugadas {
 	}
 
 	@Override
-	public void setValor(int m) {
+	public void setValor() {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
@@ -75,6 +75,12 @@ public class DoblePareja implements Jugadas {
 	public void setKicker() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public int getNumJugada() {
+		// TODO Auto-generated method stub
+		return this.numDoble1 + this.numDoble2;
 	}
 
 }

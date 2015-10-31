@@ -6,6 +6,7 @@ import IO.FileOut;
 import carta.Carta;
 import carta.Mano;
 import jugadas.Jugadas;
+import jugadores.ComparadorJugadas;
 import jugadores.Jugador;
 
 public class Main {
@@ -22,19 +23,36 @@ public class Main {
 			time_start = System.currentTimeMillis();
 			
 			
-			
+			/* Los ficheros de entrada y salida son indicados como argumentos del programa */
 			FileIn filein = new FileIn("src/data/"+args[0]);
 			FileOut fileout = new FileOut("src/data/"+args[1]);
 			String partidaLeida;
+			String clasificacion;
 			
+			/* Miestras quede una partida por leer (linea de texto) */
 			while((partidaLeida=filein.readPartida()) != null){
 				
+				clasificacion = partidaLeida + "\n";
+				
+				/* Genero la partida (la/s mano/s) que se vaa jugar */
 				Partida partidaJugar = ParserManos.parse(partidaLeida, filein.getNumJugadores());
+				
+				/* Busco la mejor jugada para el/los mejor/es jugador/es */
 				for(int i=0; i < filein.getNumJugadores(); i++) {
+					
 					Jugadas mejorJugada = parserJ.parse(partidaJugar.getJugador(i).getMano());
 					partidaJugar.getJugador(i).setMejorJugada(mejorJugada);
-					fileout.writePartida(mejorJugada.toString());
+					
+					
+					if(filein.getNumJugadores() <= 1)
+						clasificacion += mejorJugada.toString();
+//					fileout.writePartida(mejorJugada.toString());
 				}
+				if(filein.getNumJugadores() > 1)
+					clasificacion += ComparadorJugadas.clasificacion(partidaJugar.getJugadores(), filein.getNumJugadores());
+				
+				/* Escribo en el fichero de salida los resultados de la partida ejecutada */
+				fileout.writePartida(clasificacion);
 			}
 			
 			fileout.closeFile();

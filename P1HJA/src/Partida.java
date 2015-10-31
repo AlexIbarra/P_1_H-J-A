@@ -25,5 +25,9 @@ public class Partida {
 	public int getNumJugadores() {
 		return this.numJugadores;
 	}
+	
+	public ArrayList<Jugador> getJugadores() {
+		return this.jugadores;
+	}
 
 }

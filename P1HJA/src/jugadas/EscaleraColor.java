@@ -8,12 +8,12 @@ import carta.Mano;
 public class EscaleraColor implements Jugadas{
 	
 	private Mano mano;
-	private int codigo;
-	private int valorJugada = 8;
+	private int numEscaleraColor;
+	private int valorJugada = 9;
 	
 	public EscaleraColor(Mano mano, int numEscalera) {
 		this.mano = mano;
-		this.codigo = numEscalera;
+		this.numEscaleraColor = numEscalera;
 	}
 	
 	
@@ -24,10 +24,10 @@ public class EscaleraColor implements Jugadas{
 	
 	private void setCodigo() {
 		
-		this.codigo = 0;
+		this.numEscaleraColor = 0;
 		
 		for(int i=0; i < mano.getMano().size() - 1; i++) {
-			this.codigo += this.mano.getMano().get(i).getNumero();
+			this.numEscaleraColor += this.mano.getMano().get(i).getNumero();
 		}
 	}
 	
@@ -41,9 +41,9 @@ public class EscaleraColor implements Jugadas{
 	}
 
 	@Override
-	public int getPuntos() {
+	public int getValorJugada() {
 		// TODO Auto-generated method stub
-		return 0;
+		return this.valorJugada;
 	}
 
 	@Override
@@ -53,9 +53,8 @@ public class EscaleraColor implements Jugadas{
 	}
 
 	@Override
-	public void setValor(int m) {
-		// TODO Auto-generated method stub
-		
+	public void setValor() {
+		// TODO Auto-generated method stub	
 	}
 
 
@@ -64,6 +63,18 @@ public class EscaleraColor implements Jugadas{
 	public void setKicker() {
 		// TODO Auto-generated method stub
 		
+	}
+
+
+
+
+
+
+
+	@Override
+	public int getNumJugada() {
+		// TODO Auto-generated method stub
+		return this.numEscaleraColor;
 	}
 
 }

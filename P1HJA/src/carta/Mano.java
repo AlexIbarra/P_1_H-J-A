@@ -21,7 +21,8 @@ public class Mano {
 	
 	public String toString() {
 		String cadena = new String();
-		for(int i=0; i < 5; i++) {
+		for(int i=0; i < this.mano.size(); i++) {
+			/* Concateno Numero + Palo de cada carta de la mano */
 			cadena += this.mano.get(i).toString();			
 		}
 		return cadena;

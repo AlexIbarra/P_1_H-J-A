@@ -6,9 +6,12 @@ import carta.Carta;
 
 public class Nada implements Jugadas {
 	
-	private int valorJugada = 0;
+	private int valorJugada = 1;
+	private int numNada;
 	
-	public Nada() {}
+	public Nada(int n) {
+		this.numNada = n;
+	}
 	
 
 	@Override
@@ -18,9 +21,9 @@ public class Nada implements Jugadas {
 	}
 
 	@Override
-	public int getPuntos() {
+	public int getValorJugada() {
 		// TODO Auto-generated method stub
-		return 0;
+		return this.valorJugada;
 	}
 
 	@Override
@@ -36,9 +39,16 @@ public class Nada implements Jugadas {
 	}
 
 	@Override
-	public void setValor(int m) {
+	public void setValor() {
 		// TODO Auto-generated method stub
 		
+	}
+
+
+	@Override
+	public int getNumJugada() {
+		// TODO Auto-generated method stub
+		return this.numNada;
 	}
 
 }

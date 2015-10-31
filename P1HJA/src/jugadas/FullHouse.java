@@ -9,7 +9,7 @@ public class FullHouse implements Jugadas {
 	
 	private int numTrio, numPareja;
 	private Mano mano;
-	private int valorJugada = 6;
+	private int valorJugada = 7;
 	
 	public FullHouse(int num, int num1) {
 		// TODO Auto-generated constructor stub
@@ -64,9 +64,9 @@ public class FullHouse implements Jugadas {
 	}
 
 	@Override
-	public int getPuntos() {
+	public int getValorJugada() {
 		// TODO Auto-generated method stub
-		return 0;
+		return this.valorJugada;
 	}
 
 	@Override
@@ -76,7 +76,7 @@ public class FullHouse implements Jugadas {
 	}
 
 	@Override
-	public void setValor(int m) {
+	public void setValor() {
 		// TODO Auto-generated method stub
 		
 	}
@@ -85,6 +85,12 @@ public class FullHouse implements Jugadas {
 	public void setKicker() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public int getNumJugada() {
+		// TODO Auto-generated method stub
+		return this.numPareja*2 + this.numTrio*3;
 	}
 
 }

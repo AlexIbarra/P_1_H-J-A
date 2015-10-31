@@ -7,14 +7,17 @@ public class Jugador {
 	
 	private Mano mano;
 	private Jugadas mejorJugada;
-	private int puesto;
+	private int valor;
+	private int numJugador;
 	
 	
 	public Jugador(Mano mano) {
 		this.mano = mano;
 	}
 	
-	public Jugador() {}
+	public Jugador(int n) {
+		this.numJugador = n;
+	}
 	
 	
 	public Mano getMano() {
@@ -23,18 +26,29 @@ public class Jugador {
 	
 	public void setMejorJugada(Jugadas jugada) {
 		this.mejorJugada = jugada;
+		this.valor = this.mejorJugada.getValorJugada();
 	}
 	
-	public void setPuesto(int p) {
-		this.puesto = p;
+//	private void setPuesto() {
+//		this.puesto = this.mejorJugada.getValorJugada();
+//	}
+	
+	public int getValorJugador() {
+		return this.valor;
 	}
 	
-	public int getPuesto() {
-		return this.puesto;
+	public int getNumJugador() {
+		return this.numJugador;
 	}
 	
 	public void setMano(Mano mano) {
 		this.mano = mano;
+	}
+	
+	public String toString() {
+		String cadena;
+		cadena = "J"+this.numJugador+": "+this.mejorJugada.toString();
+		return cadena;
 	}
 
 }

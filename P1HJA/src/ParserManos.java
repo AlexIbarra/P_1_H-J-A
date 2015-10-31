@@ -19,7 +19,7 @@ public class ParserManos {
 			i=4;
 			for(int k=0; k < numjug; k++) {
 				
-				Jugador jugador = new Jugador();
+				Jugador jugador = new Jugador(k+1);
 				Mano manoJugador = new Mano();
 				
 				/* Primero leo las cartas de la mesa */
@@ -71,7 +71,7 @@ public class ParserManos {
 		else if(token[4] == ';') {
 			i=7;
 				
-			Jugador jugador = new Jugador();
+			Jugador jugador = new Jugador(null);
 			Mano manoJugador = new Mano();
 			
 			manoJugador.setMano(new Carta(token[0], token[1]));
@@ -97,7 +97,7 @@ public class ParserManos {
 		}
 		/* Caso 1*/
 		else {
-			Jugador jugador = new Jugador();
+			Jugador jugador = new Jugador(null);
 			Mano manoJugador = new Mano();
 			
 			manoJugador.setMano(new Carta(token[0], token[1]));

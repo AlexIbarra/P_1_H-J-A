@@ -8,13 +8,14 @@ import carta.Mano;
 public class Escalera implements Jugadas{
 
 	private int numEscalera;
-	private int valorJugada = 4;
+	private int valorJugada = 5;
 	private Mano mano;
 	
 	public Escalera(Mano mano, int num){
-		num = numEscalera;
+		this.numEscalera = num;
 		this.mano = mano;
 	}
+	
 	public Escalera (int num){
 		this.numEscalera = num;
 	}
@@ -47,9 +48,9 @@ public class Escalera implements Jugadas{
 	}
 
 	@Override
-	public int getPuntos() {
+	public int getValorJugada() {
 		// TODO Auto-generated method stub
-		return valorJugada;
+		return this.valorJugada;
 	}
 
 	@Override
@@ -59,9 +60,8 @@ public class Escalera implements Jugadas{
 	}
 
 	@Override
-	public void setValor(int m) {
+	public void setValor() {
 		// TODO Auto-generated method stub
-		
 	}
 
 
@@ -69,6 +69,12 @@ public class Escalera implements Jugadas{
 	public void setKicker() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public int getNumJugada() {
+		// TODO Auto-generated method stub
+		return this.numEscalera;
 	}
 
 }

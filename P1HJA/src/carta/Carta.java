@@ -35,7 +35,9 @@ public class Carta {
 	}
 	
 	public String toString() {
-		return String.valueOf(this.numero)+String.valueOf(this.palo);
+		String cadena;
+		cadena = String.valueOf(this.numero)+String.valueOf(this.palo);
+		return cadena;
 	}
 	
 	

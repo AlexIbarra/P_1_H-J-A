@@ -12,14 +12,14 @@ public interface Jugadas {
 		public Jugadas getJugada(ArrayList<Carta> mano);
 		
 		/*Obtiene la suma de puntos de la jugada*/
-		public int getPuntos();
+		public int getValorJugada();
 		
 		public void setKicker();		
 		
 		public Carta getKicker();
 		
-		public void setValor(int m);
+		public void setValor();
 		
-		
+		public int getNumJugada();
 		
 }

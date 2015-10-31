@@ -8,7 +8,7 @@ import carta.Mano;
 public class Trio implements Jugadas {
 	
 	private int numTrio;
-	private int valorJugada = 3;
+	private int valorJugada = 4;
 	private Mano mano;
 	
 	public Trio(int num){
@@ -45,7 +45,7 @@ public class Trio implements Jugadas {
 	}
 
 	@Override
-	public int getPuntos() {
+	public int getValorJugada() {
 		// TODO Auto-generated method stub
 		return valorJugada;
 	}
@@ -57,15 +57,20 @@ public class Trio implements Jugadas {
 	}
 
 	@Override
-	public void setValor(int m) {
+	public void setValor() {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void setKicker() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public int getNumJugada() {
+		// TODO Auto-generated method stub
+		return this.numTrio;
 	}
 
 }

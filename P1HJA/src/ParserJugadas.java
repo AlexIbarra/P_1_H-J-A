@@ -19,6 +19,7 @@ public class ParserJugadas {
 	private int Trio;
 	private int[] codigo;
 	private char[] palo;
+	private Mano mano5;
 
 	
 	public ParserJugadas() {
@@ -46,6 +47,8 @@ public class ParserJugadas {
 		boolean encontrado = false;
 		this.encontradoPareja = false;
 		this.encontrdoTrio = false;
+		this.Trio = -1;
+		this.Pareja = -1;
 		
 		long time_start, time_end;
 		time_start = System.currentTimeMillis();
@@ -67,7 +70,7 @@ public class ParserJugadas {
 							if(encontradoPareja){
 								this.mejorJugada = new Pareja(mano, this.Pareja);
 							}else{
-								this.mejorJugada = new Nada();
+								this.mejorJugada = new Nada(0);
 							}
 						}
 							

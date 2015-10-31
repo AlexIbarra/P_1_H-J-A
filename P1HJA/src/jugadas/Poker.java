@@ -1,6 +1,7 @@
 package jugadas;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import carta.Carta;
 import carta.Mano;
@@ -8,8 +9,9 @@ import carta.Mano;
 public class Poker implements Jugadas {
 
 	private int numPoker;
-	private int valorJugada = 7;
+	private int valorJugada = 8;
 	private Mano mano;
+	private HashMap<Character, Integer> valores;// = new Hashtable<Integer,String>()
 	
 	public Poker(int num){
 		
@@ -47,9 +49,9 @@ public class Poker implements Jugadas {
 	}
 
 	@Override
-	public int getPuntos() {
+	public int getValorJugada() {
 		// TODO Auto-generated method stub
-		return valorJugada;
+		return this.valorJugada;
 	}
 
 	@Override
@@ -59,16 +61,27 @@ public class Poker implements Jugadas {
 	}
 
 	@Override
-	public void setValor(int m) {
+	public void setValor() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void setKicker() {
 		// TODO Auto-generated method stub
 		
-	}	
+	}
+	
+	public String toString() {
+		String cadena;
+		cadena = this.mano.toString();
+		return cadena;
+	}
+
+	@Override
+	public int getNumJugada() {
+		// TODO Auto-generated method stub
+		return this.numPoker;
+	}
 
 	
 }
