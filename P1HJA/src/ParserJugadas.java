@@ -56,7 +56,6 @@ public class ParserJugadas {
 		
 		/* Comprobamos el poker */
 		if(!esPoker(mano)) { // si no es poker
-//			esTrio(mano);
 			esParejasTrio(mano);
 			if(this.encontradoPareja && this.encontrdoTrio && (this.Trio != this.Pareja)){
 				this.mejorJugada = new FullHouse(mano, this.Trio, this.Pareja);
@@ -83,6 +82,16 @@ public class ParserJugadas {
 		return mejorJugada;
 	}
 	
+	
+	
+	
+	
+	
+///////////////////////////////////////////////////////////////////////////////////////	
+////////////////////////                                      /////////////////////////	
+//////////////////////// FUNCIONES PARA COMPROBAR LAS JUGADAS /////////////////////////
+////////////////////////                                      /////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////	
 	
 	
 	
@@ -242,7 +251,7 @@ public class ParserJugadas {
 			}
 			i--;
 		}
-		/*tenemos que ver bien como hacer la codificacion del valor de las jugadas*/
+
 		return encontrado;
 	}
 
