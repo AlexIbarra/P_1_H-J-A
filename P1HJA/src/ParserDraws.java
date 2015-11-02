@@ -85,8 +85,9 @@ public class ParserDraws {
 				{
 					encontrado = true;
 				}
-			}
 				i--;
+			}
+				
 		}
 		return encontrado;
 	}
