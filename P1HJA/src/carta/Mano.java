@@ -18,12 +18,44 @@ public class Mano {
 		return this.mano;
 	}
 	
+	public Carta getCarta(int n) {
+		return this.mano.get(n);
+	}
+	
+	public void setUsada(int i, boolean b) {
+		mano.get(i).setUsada(b);
+	}
+	
+	
+	public int getKicker() {
+		return 0;
+	}
+	
+	public boolean getUsada() {
+		return true;
+	}
+	
+	public void setKicker(int n) {
+		int i= this.mano.size()-1;
+		int j=1;
+		while(n != 0) {
+			/* Las cartas que no esten usadas las marco como kicker */
+			if(this.mano.get(i).getUsada() != true) {
+				n--;
+				this.mano.get(i).setKicker(j);
+				this.mano.get(i).setUsada(true);
+				j++;
+			}
+			i--;
+		}
+	}
 	
 	public String toString() {
 		String cadena = new String();
 		for(int i=0; i < this.mano.size(); i++) {
 			/* Concateno Numero + Palo de cada carta de la mano */
-			cadena += this.mano.get(i).toString();			
+			if(this.mano.get(i).getUsada() == true)
+				cadena += this.mano.get(i).toString();			
 		}
 		return cadena;
 	}

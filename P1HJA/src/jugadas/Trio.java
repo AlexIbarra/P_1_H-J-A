@@ -10,6 +10,7 @@ public class Trio implements Jugadas {
 	private int numTrio;
 	private int valorJugada = 4;
 	private Mano mano;
+	private Carta[] kicker;
 	
 	public Trio(int num){
 		
@@ -19,6 +20,7 @@ public class Trio implements Jugadas {
 	public Trio(Mano mano, int numTrio) {
 		this.numTrio = numTrio;
 		this.mano = mano;
+		this.kicker = new Carta[2];
 	}
 	
 	
@@ -51,9 +53,9 @@ public class Trio implements Jugadas {
 	}
 
 	@Override
-	public Carta getKicker() {
+	public int getKicker(int n) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.kicker[n].getKicker();
 	}
 
 	@Override
@@ -62,15 +64,35 @@ public class Trio implements Jugadas {
 	}
 
 	@Override
-	public void setKicker() {
-		// TODO Auto-generated method stub
+	public void setKicker(int carta) {
+		int i= this.mano.getMano().size()-1;
+		while(carta != 0) {
+			
+			if(this.mano.getCarta(i).getKicker() != -1) {
+				carta--;
+				this.kicker[carta] = this.mano.getCarta(i);
+			}
+			i--;
+		}
 		
+	}
+	
+	public String toString() {
+		String cadena;
+		cadena = "Trio " + this.mano.toString();
+		return cadena;
 	}
 
 	@Override
 	public int getNumJugada() {
 		// TODO Auto-generated method stub
 		return this.numTrio;
+	}
+
+	@Override
+	public int numKickers() {
+		// TODO Auto-generated method stub
+		return 2;
 	}
 
 }

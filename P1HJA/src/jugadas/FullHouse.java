@@ -70,9 +70,9 @@ public class FullHouse implements Jugadas {
 	}
 
 	@Override
-	public Carta getKicker() {
+	public int getKicker(int n) {
 		// TODO Auto-generated method stub
-		return null;
+		return 0;
 	}
 
 	@Override
@@ -82,15 +82,27 @@ public class FullHouse implements Jugadas {
 	}
 
 	@Override
-	public void setKicker() {
+	public void setKicker(int carta) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public String toString() {
+		String cadena;
+		cadena = "Full House " + this.mano.toString();
+		return cadena;
 	}
 
 	@Override
 	public int getNumJugada() {
 		// TODO Auto-generated method stub
-		return this.numPareja*2 + this.numTrio*3;
+		return this.numPareja + this.numTrio*100;
+	}
+
+	@Override
+	public int numKickers() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

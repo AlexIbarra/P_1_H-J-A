@@ -10,6 +10,7 @@ public class Escalera implements Jugadas{
 	private int numEscalera;
 	private int valorJugada = 5;
 	private Mano mano;
+	private Carta kicker;
 	
 	public Escalera(Mano mano, int num){
 		this.numEscalera = num;
@@ -54,9 +55,9 @@ public class Escalera implements Jugadas{
 	}
 
 	@Override
-	public Carta getKicker() {
+	public int getKicker(int n) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.kicker.getKicker();
 	}
 
 	@Override
@@ -66,15 +67,34 @@ public class Escalera implements Jugadas{
 
 
 	@Override
-	public void setKicker() {
-		// TODO Auto-generated method stub
-		
+	public void setKicker(int carta) {
+		int i= this.mano.getMano().size()-1;
+		while(carta != 0) {
+			
+			if(this.mano.getCarta(i).getKicker() != -1) {
+				carta--;
+				this.kicker = this.mano.getCarta(i);
+			}
+			i--;
+		}		
+	}
+	
+	public String toString() {
+		String cadena;
+		cadena = "Escalera " + this.mano.toString();
+		return cadena;
 	}
 
 	@Override
 	public int getNumJugada() {
 		// TODO Auto-generated method stub
 		return this.numEscalera;
+	}
+
+	@Override
+	public int numKickers() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

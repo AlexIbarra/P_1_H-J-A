@@ -10,15 +10,16 @@ public class Pareja implements Jugadas {
 	private Mano mano;
 	private int valorJugada = 2;
 	private int numPareja;
-	private Carta kicker;
+	private Carta[] kicker;
 	
-	public Pareja(int num){
-		num = numPareja;
-	}
+//	public Pareja(int num){
+//		num = numPareja;
+//	}
 	
 	public Pareja(Mano mano, int numPareja) {
 		this.mano = mano;
 		this.numPareja = numPareja;
+		this.kicker = new Carta[3];
 	}
 	
 	@Override
@@ -40,7 +41,7 @@ public class Pareja implements Jugadas {
 		
 		/*tenemos que ver bien como hacer la codificacion del valor de las jugadas*/
 		valorJugada = numPareja-1 ; //En este caso de la pareja son iguales-1
-		return new Pareja(numPareja);
+		return null;
 	}
 	
 	@Override
@@ -49,9 +50,9 @@ public class Pareja implements Jugadas {
 	}
 	
 	@Override
-	public Carta getKicker() {
+	public int getKicker(int n) {
 		/*Mirar la carta mas alta de la mano y si no pertenece a la pareja devolverla?*/
-		return this.kicker;
+		return this.kicker[n].getKicker();
 	}
 
 	@Override
@@ -61,19 +62,34 @@ public class Pareja implements Jugadas {
 	}
 	
 	public String toString(){
-		return "Pareja de" + this.numPareja;		
+		return "Pareja " + this.mano.toString();	
 	}
 
 	/* Metodo encargado de buscar y asignar el kicker */
 	@Override
-	public void setKicker() {
-	
+	public void setKicker(int carta) {
+		int i= this.mano.getMano().size()-1;
+		while(carta != 0) {
+			
+			if(this.mano.getCarta(i).getKicker() != -1) {
+				carta--;
+				this.kicker[carta] = this.mano.getCarta(i);
+			}
+			i--;
+		}
 		
 	}
+	
 
 	@Override
 	public int getNumJugada() {
 		// TODO Auto-generated method stub
 		return this.numPareja;
+	}
+
+	@Override
+	public int numKickers() {
+		// TODO Auto-generated method stub
+		return 3;
 	}
 }

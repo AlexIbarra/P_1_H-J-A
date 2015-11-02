@@ -45,6 +45,12 @@ public class Jugador {
 		this.mano = mano;
 	}
 	
+	public Jugadas getMejorJugada() {
+		return this.mejorJugada;
+	}
+	
+	
+	
 	public String toString() {
 		String cadena;
 		cadena = "J"+this.numJugador+": "+this.mejorJugada.toString();

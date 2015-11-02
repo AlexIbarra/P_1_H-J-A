@@ -20,6 +20,8 @@ public class ParserJugadas {
 	private int[] codigo;
 	private char[] palo;
 	private Mano mano5;
+	private int posTrio;
+	private int posPareja;
 
 	
 	public ParserJugadas() {
@@ -55,21 +57,64 @@ public class ParserJugadas {
 		
 		
 		/* Comprobamos el poker */
+//		if(!esPoker(mano)) { // si no es poker
+//			esParejasTrio(mano);
+//			if(this.encontradoPareja && this.encontrdoTrio && (this.Trio != this.Pareja)){
+//				this.mejorJugada = new FullHouse(mano, this.Trio, this.Pareja);
+//			}else if(!esEscaleraColor(mano)){
+//				if(!esColor(mano)){
+//					
+//					if(!esEscalera(mano)){
+//						if(encontrdoTrio){
+//							this.mejorJugada = new Trio(mano, this.Trio);
+//						}else if(!esDoblesParejas(mano)){
+//							if(encontradoPareja){
+//								this.mejorJugada = new Pareja(mano, this.Pareja);
+//							}else{
+//								this.mejorJugada = new Nada(0);
+//							}
+//						}
+//							
+//					}
+//				}
+//			}
+//			
+//		}
+		
+		
+		
+		
+		
 		if(!esPoker(mano)) { // si no es poker
 			esParejasTrio(mano);
 			if(this.encontradoPareja && this.encontrdoTrio && (this.Trio != this.Pareja)){
+				mano.setUsada(posTrio-2, true);
+				mano.setUsada(posTrio-1, true);
+				mano.setUsada(posTrio, true);
+				mano.setUsada(posPareja-1, true);
+				mano.setUsada(posPareja, true);			
 				this.mejorJugada = new FullHouse(mano, this.Trio, this.Pareja);
 			}else if(!esEscaleraColor(mano)){
 				if(!esColor(mano)){
-					
 					if(!esEscalera(mano)){
 						if(encontrdoTrio){
+							mano.setUsada(posTrio-2, true);
+							mano.setUsada(posTrio-1, true);
+							mano.setUsada(posTrio, true);
+							mano.setKicker(2);							
 							this.mejorJugada = new Trio(mano, this.Trio);
+							this.mejorJugada.setKicker(2);
 						}else if(!esDoblesParejas(mano)){
-							if(encontradoPareja){
+							if(encontradoPareja){	
+								mano.setUsada(posPareja-1, true);
+								mano.setUsada(posPareja, true);
+								mano.setKicker(3);								
 								this.mejorJugada = new Pareja(mano, this.Pareja);
-							}else{
-								this.mejorJugada = new Nada(0);
+								this.mejorJugada.setKicker(3);
+							}else {
+								mano.setKicker(5);
+								this.mejorJugada.setKicker(5);
+								this.mejorJugada = new Nada(mano, this.codigo[this.codigo.length-1]);
 							}
 						}
 							
@@ -108,11 +153,13 @@ public class ParserJugadas {
 					encontrado = true;
 					this.encontrdoTrio = true;
 					this.Trio = this.codigo[i];
+					this.posTrio = i;
 					i--;
 				}else{
 					encontrado = true;;
 					this.encontradoPareja = true;
 					this.Pareja = this.codigo[i];
+					this.posPareja = i;
 				}
 			}			
 			i--;
@@ -130,44 +177,47 @@ public class ParserJugadas {
 		boolean encontrado2 = false;
 		int pareja = 0;
 		
-		while (i > 2 && !encontrado2){
+		while (i > 2 && !encontrado2) {
 			
 			if(this.codigo[i] == this.codigo[i-1] && !encontrado){
 				encontrado = true;
-				pareja = this.codigo[i];
-				
+				pareja = this.codigo[i];				
 			}
 			i--;
 			if((this.codigo[i-1] == this.codigo[i-2]) && encontrado){
 				encontrado2 = true;
+				mano.setUsada(i-2, true);
+				mano.setUsada(i-1, true);
+				mano.setUsada(i, true);
+				mano.setKicker(1);
 				this.mejorJugada= new DoblePareja(mano, pareja, this.codigo[i-1]);
+				this.mejorJugada.setKicker(1);
 			}
-
 		}	
 		return encontrado2;
 	}
 
 	
 	
-	private boolean esTrio(Mano mano) {
-			
-		int i = mano.getMano().size()-1;
-		boolean encontrado = false;
-		
-		while (i > 1 && !encontrado){
-			
-			if(this.codigo[i] == this.codigo[i-2]) {
-				
-				encontrado = true;
-				this.encontrdoTrio = true;
-				this.Trio = this.codigo[i];
-
-			}	
-			i--;
-			
-		}
-		return encontrado;
-	}
+//	private boolean esTrio(Mano mano) {
+//			
+//		int i = mano.getMano().size()-1;
+//		boolean encontrado = false;
+//		
+//		while (i > 1 && !encontrado){
+//			
+//			if(this.codigo[i] == this.codigo[i-2]) {
+//				
+//				encontrado = true;
+//				this.encontrdoTrio = true;
+//				this.Trio = this.codigo[i];
+//
+//			}	
+//			i--;
+//			
+//		}
+//		return encontrado;
+//	}
 	
 	
 	
@@ -182,6 +232,11 @@ public class ParserJugadas {
 									this.codigo[i-3] == this.codigo[i-4]+1) {
 				
 				encontrado = true;
+				mano.setUsada(i-4, true);
+				mano.setUsada(i-3, true);
+				mano.setUsada(i-2, true);
+				mano.setUsada(i-1, true);
+				mano.setUsada(i, true);
 				this.mejorJugada = new Escalera(mano, this.codigo[i]);
 			}
 			i--;
@@ -194,20 +249,25 @@ public class ParserJugadas {
 	private boolean esEscaleraColor(Mano mano) {
 			
 		 int i = mano.getMano().size() -1; 
-		 boolean encontrado = false; 
+		 boolean encontrado = false;
 		
 		while ( i >= 4 && !encontrado){
 		
-			 if (this.codigo[i] == this.codigo[i-1] -1 && 
+			 if (this.codigo[i] == this.codigo[i-1] +1 && 
 					 this.palo[i] == this.palo[i-1] && 
-					 this.codigo[i] == this.codigo[i-2] -2 && 
+					 this.codigo[i] == this.codigo[i-2] +2 && 
 							 this.palo[i] == this.palo[i-2] && 
-					 this.codigo[i] == this.codigo[i-3] -3 && 
+					 this.codigo[i] == this.codigo[i-3] +3 && 
 							 this.palo[i] == this.palo[i-3] && 
-					 this.codigo[i] == this.codigo[i-4] -4 && 
+					 this.codigo[i] == this.codigo[i-4] +4 && 
 							 this.palo[i] == this.palo[i-4]) {
 				
 				encontrado = true;
+				mano.setUsada(i-4, true);
+				mano.setUsada(i-3, true);
+				mano.setUsada(i-2, true);
+				mano.setUsada(i-1, true);
+				mano.setUsada(i, true);
 				this.mejorJugada = new EscaleraColor(mano, this.codigo[i]);
 			}
 			 i--;
@@ -226,7 +286,13 @@ public class ParserJugadas {
 			if(this.codigo[i] == this.codigo[i-3] ){
 				
 				encontrado = true;
+				mano.setUsada(i-3, true);
+				mano.setUsada(i-2, true);
+				mano.setUsada(i-1, true);
+				mano.setUsada(i, true);
+				mano.setKicker(1);
 				this.mejorJugada = new Poker(mano, this.codigo[i]);
+				this.mejorJugada.setKicker(1);
 			}			
 			i--;
 			
@@ -247,7 +313,9 @@ public class ParserJugadas {
 									this.palo[i-3] == this.palo[i-4]) {
 				
 				encontrado = true;
+				mano.setKicker(5);
 				this.mejorJugada = new Color(mano, this.codigo[i]);
+				this.mejorJugada.setKicker(5);
 			}
 			i--;
 		}

@@ -11,7 +11,8 @@ public class Poker implements Jugadas {
 	private int numPoker;
 	private int valorJugada = 8;
 	private Mano mano;
-	private HashMap<Character, Integer> valores;// = new Hashtable<Integer,String>()
+	private char[] cartas;
+	private Carta kicker;
 	
 	public Poker(int num){
 		
@@ -55,9 +56,9 @@ public class Poker implements Jugadas {
 	}
 
 	@Override
-	public Carta getKicker() {
+	public int getKicker(int n) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.kicker.getKicker();
 	}
 
 	@Override
@@ -66,14 +67,22 @@ public class Poker implements Jugadas {
 	}
 
 	@Override
-	public void setKicker() {
-		// TODO Auto-generated method stub
+	public void setKicker(int carta) {
 		
+		int i= this.mano.getMano().size()-1;
+		while(carta != 0) {
+			
+			if(this.mano.getCarta(i).getKicker() != -1) {
+				carta--;
+				this.kicker = this.mano.getCarta(i);
+			}
+			i--;
+		}
 	}
 	
 	public String toString() {
 		String cadena;
-		cadena = this.mano.toString();
+		cadena = "Poker " + this.mano.toString();
 		return cadena;
 	}
 
@@ -81,6 +90,12 @@ public class Poker implements Jugadas {
 	public int getNumJugada() {
 		// TODO Auto-generated method stub
 		return this.numPoker;
+	}
+
+	@Override
+	public int numKickers() {
+		// TODO Auto-generated method stub
+		return 1;
 	}
 
 	

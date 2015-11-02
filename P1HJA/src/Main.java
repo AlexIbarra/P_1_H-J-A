@@ -45,8 +45,14 @@ public class Main {
 					partidaJugar.getJugador(i).setMejorJugada(mejorJugada);
 					
 					
-					if(filein.getNumJugadores() <= 1)
-						clasificacion += mejorJugada.toString();
+					if(filein.getNumJugadores() <= 1) {
+						clasificacion += "- Best hand: ";
+						clasificacion += mejorJugada.toString() + "\n";
+						if(partidaJugar.getJugador(i).getMano().getMano().size() <= 5){
+							clasificacion += "- Draw: " + "\n";
+						}
+							
+					}
 					
 //					draws = parserD.Draw(partidaJugar.getJugador(i).getMano());
 //					if(draws > 3)

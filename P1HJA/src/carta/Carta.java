@@ -7,6 +7,8 @@ public class Carta {
 	private char numero; // corresponde con el numero de la carta
 	private char palo;	// palo de la carta
 	private int codigo;	// codigo asignado a la carta (segun su numero)
+	private boolean usada;
+	private int kicker;
 	private HashMap<Character, Integer> valores;// = new Hashtable<Integer,String>()
 	
 	public Carta (char num, char p){
@@ -16,6 +18,8 @@ public class Carta {
 		this.valores = new HashMap<Character, Integer>();
 		setHashMap();
 		this.codigo = this.valores.get(this.numero);
+		this.usada = false;
+		this.kicker = -1;
 	}
 	
 	public char getNumero() {
@@ -32,6 +36,22 @@ public class Carta {
 	
 	public void setCodigo(byte c) {
 		this.codigo = c;
+	}
+	
+	public void setUsada(boolean b) {
+		this.usada = b;
+	}
+	
+	public void setKicker(int k) {
+		this.kicker = k;
+	}
+	
+	public int getKicker() {
+		return this.codigo;
+	}
+	
+	public boolean getUsada() {
+		return this.usada;
 	}
 	
 	public String toString() {

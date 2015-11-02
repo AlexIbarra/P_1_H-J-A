@@ -10,6 +10,7 @@ public class Color implements Jugadas {
 	private int numColor;
 	private int valorJugada = 6;
 	private Mano mano;
+	private Carta[] kicker;
 	
 	public Color(int num){
 		num = numColor;
@@ -19,6 +20,7 @@ public class Color implements Jugadas {
 	public Color(Mano mano, int numColor) {
 		this.mano = mano;
 		this.numColor = numColor;
+		this.kicker = new Carta[5];
 	}
 	
 	
@@ -51,9 +53,9 @@ public class Color implements Jugadas {
 	}
 
 	@Override
-	public Carta getKicker() {
+	public int getKicker(int n) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.kicker[n].getKicker();
 	}
 
 	@Override
@@ -64,9 +66,24 @@ public class Color implements Jugadas {
 
 
 	@Override
-	public void setKicker() {
-		// TODO Auto-generated method stub
+	public void setKicker(int carta) {
 		
+		int i= this.mano.getMano().size()-1;
+		while(carta != 0) {
+			
+			if(this.mano.getCarta(i).getKicker() != -1) {
+				carta--;
+				this.kicker[carta] = this.mano.getCarta(i);
+			}
+			i--;
+		}
+		
+	}
+	
+	public String toString() {
+		String cadena;
+		cadena = "Color " + this.mano.toString();
+		return cadena;
 	}
 
 
@@ -74,6 +91,13 @@ public class Color implements Jugadas {
 	public int getNumJugada() {
 		// TODO Auto-generated method stub
 		return this.numColor;
+	}
+
+
+	@Override
+	public int numKickers() {
+		// TODO Auto-generated method stub
+		return 5;
 	}
 
 }
