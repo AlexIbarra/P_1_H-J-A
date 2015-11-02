@@ -1,3 +1,4 @@
+package main;
 import carta.Mano;
 import jugadas.Color;
 import jugadas.DoblePareja;
@@ -112,9 +113,9 @@ public class ParserJugadas {
 								this.mejorJugada = new Pareja(mano, this.Pareja);
 								this.mejorJugada.setKicker(3);
 							}else {
-								mano.setKicker(5);
-								this.mejorJugada.setKicker(5);
+								mano.setKicker(5);				
 								this.mejorJugada = new Nada(mano, this.codigo[this.codigo.length-1]);
+								this.mejorJugada.setKicker(5);
 							}
 						}
 							
@@ -181,14 +182,15 @@ public class ParserJugadas {
 			
 			if(this.codigo[i] == this.codigo[i-1] && !encontrado){
 				encontrado = true;
-				pareja = this.codigo[i];				
+				pareja = this.codigo[i];
+				mano.setUsada(i-1, true);
+				mano.setUsada(i, true);
 			}
 			i--;
 			if((this.codigo[i-1] == this.codigo[i-2]) && encontrado){
 				encontrado2 = true;
 				mano.setUsada(i-2, true);
 				mano.setUsada(i-1, true);
-				mano.setUsada(i, true);
 				mano.setKicker(1);
 				this.mejorJugada= new DoblePareja(mano, pareja, this.codigo[i-1]);
 				this.mejorJugada.setKicker(1);
@@ -198,29 +200,7 @@ public class ParserJugadas {
 	}
 
 	
-	
-//	private boolean esTrio(Mano mano) {
-//			
-//		int i = mano.getMano().size()-1;
-//		boolean encontrado = false;
-//		
-//		while (i > 1 && !encontrado){
-//			
-//			if(this.codigo[i] == this.codigo[i-2]) {
-//				
-//				encontrado = true;
-//				this.encontrdoTrio = true;
-//				this.Trio = this.codigo[i];
-//
-//			}	
-//			i--;
-//			
-//		}
-//		return encontrado;
-//	}
-	
-	
-	
+
 	
 	private boolean esEscalera(Mano mano) {
 		boolean encontrado = false;

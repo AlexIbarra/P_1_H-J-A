@@ -1,3 +1,4 @@
+package main;
 import carta.Mano;
 
 public class ParserDraws {

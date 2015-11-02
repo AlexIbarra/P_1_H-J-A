@@ -53,7 +53,7 @@ public class Mano {
 	public String toString() {
 		String cadena = new String();
 		for(int i=0; i < this.mano.size(); i++) {
-			/* Concateno Numero + Palo de cada carta de la mano */
+			/* Concateno Numero + Palo de cada carta de la mano que este usada */
 			if(this.mano.get(i).getUsada() == true)
 				cadena += this.mano.get(i).toString();			
 		}

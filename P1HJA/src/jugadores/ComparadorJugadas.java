@@ -1,7 +1,9 @@
 package jugadores;
 
+
 import java.util.ArrayList;
 
+import main.ParserDraws;
 import carta.Mano;
 import jugadas.Jugadas;
 
@@ -16,13 +18,29 @@ public class ComparadorJugadas {
 	
 	public static String clasificacion(ArrayList<Jugador> jug, int n) {
 		jugadores = jug;
+		ParserDraws parserD = new ParserDraws();
+		int draws;
 		
 		if(n>1)
 			burbuja(n);
 		
 		String cadena = "";
-		for(int i=n-1; i >= 0; i--) 
+		for(int i=n-1; i >= 0; i--) { 
+			
 			cadena += jugadores.get(i).toString() + "\n";
+			
+			draws = parserD.Draw(jugadores.get(i).getMano());
+			if(draws > 3)
+				cadena += "- Draw: Straight Flush" + "\n";
+			else
+			{
+				if((draws==3)||(draws==2))
+					cadena += "- Draw: Straight Gutshot" + "\n";
+
+				if((draws == 3)||(draws == 1))
+					cadena += "- Draw: Flush" + "\n";
+			}		
+		}
 
 		return cadena;		
 	}

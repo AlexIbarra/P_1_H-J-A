@@ -1,3 +1,4 @@
+package main;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -48,23 +49,21 @@ public class Main {
 					if(filein.getNumJugadores() <= 1) {
 						clasificacion += "- Best hand: ";
 						clasificacion += mejorJugada.toString() + "\n";
-//						if(partidaJugar.getJugador(i).getMano().getMano().size() <= 5){
-//							clasificacion += "- Draw: " + "\n";
-//						}
-							
+						
+						draws = parserD.Draw(partidaJugar.getJugador(i).getMano());
+						if(draws > 3)
+							clasificacion += "- Draw: Straight Flush" + "\n";
+						else
+						{
+							if((draws==3)||(draws==2))
+								clasificacion += "- Draw: Straight Gutshot" + "\n";
+
+							if((draws == 3)||(draws == 1))
+								clasificacion += "- Draw: Flush" + "\n";
+						}							
 					}
 					
-					draws = parserD.Draw(partidaJugar.getJugador(i).getMano());
-					if(draws > 3)
-						clasificacion += "- Draw: Straight Flush" + "\n";
-					else
-					{
-						if((draws==3)||(draws==2))
-							clasificacion += "- Draw: Straight Gutshot" + "\n";
-
-						if((draws == 3)||(draws == 1))
-							clasificacion += "- Draw: Flush" + "\n";
-					}
+					
 				}
 				if(filein.getNumJugadores() > 1)
 					clasificacion += ComparadorJugadas.clasificacion(partidaJugar.getJugadores(), filein.getNumJugadores());

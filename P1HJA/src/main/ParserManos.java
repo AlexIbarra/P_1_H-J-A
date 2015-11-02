@@ -1,3 +1,4 @@
+package main;
 import carta.Carta;
 import carta.Mano;
 import jugadores.Jugador;
