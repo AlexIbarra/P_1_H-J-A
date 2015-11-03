@@ -12,35 +12,14 @@ public class EscaleraColor implements Jugadas{
 	private int valorJugada = 9;
 	private Carta kicker;
 	
+	
+	
 	public EscaleraColor(Mano mano, int numEscalera) {
 		this.mano = mano;
 		this.numEscaleraColor = numEscalera;
 	}
-	
-	
 
 	
-	
-	
-	
-	private void setCodigo() {
-		
-		this.numEscaleraColor = 0;
-		
-		for(int i=0; i < mano.getMano().size() - 1; i++) {
-			this.numEscaleraColor += this.mano.getMano().get(i).getNumero();
-		}
-	}
-	
-	
-	
-	
-	@Override
-	public Jugadas getJugada(ArrayList<Carta> mano) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	@Override
 	public int getValorJugada() {
 		// TODO Auto-generated method stub
@@ -76,7 +55,7 @@ public class EscaleraColor implements Jugadas{
 
 	public String toString() {
 		String cadena;
-		cadena = "Escalera de Color " + this.mano.toString();
+		cadena = "Escalera de Color (" + this.mano.toString() + ")";
 		return cadena;
 	}
 
@@ -88,11 +67,6 @@ public class EscaleraColor implements Jugadas{
 		// TODO Auto-generated method stub
 		return this.numEscaleraColor;
 	}
-
-
-
-
-
 
 
 	@Override

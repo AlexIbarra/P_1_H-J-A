@@ -26,8 +26,8 @@ public class Main {
 			
 			
 			/* Los ficheros de entrada y salida son indicados como argumentos del programa */
-			FileIn filein = new FileIn("src/data/"+args[0]);
-			FileOut fileout = new FileOut("src/data/"+args[1]);
+			FileIn filein = new FileIn(args[0]);
+			FileOut fileout = new FileOut(args[1]);
 			String partidaLeida;
 			String clasificacion;
 			

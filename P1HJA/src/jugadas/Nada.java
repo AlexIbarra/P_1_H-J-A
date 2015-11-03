@@ -1,7 +1,5 @@
 package jugadas;
 
-import java.util.ArrayList;
-
 import carta.Carta;
 import carta.Mano;
 
@@ -12,19 +10,14 @@ public class Nada implements Jugadas {
 	private Mano mano;
 	private Carta[] kicker;
 	
+	
 	public Nada(Mano mano, int n) {
 		this.numNada = n;
 		this.mano = mano;
 		this.kicker = new Carta[5];
 	}
 	
-
-	@Override
-	public Jugadas getJugada(ArrayList<Carta> mano) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	@Override
 	public int getValorJugada() {
 		// TODO Auto-generated method stub
@@ -59,7 +52,7 @@ public class Nada implements Jugadas {
 	
 	public String toString() {
 		String cadena;
-		cadena = "Nada " + this.mano.toString();
+		cadena = "Nada (" + this.mano.toString() + ")";
 		return cadena;
 	}
 

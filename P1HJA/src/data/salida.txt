@@ -1,312 +1,312 @@
 9s2h5hThKd
-- Best hand: Nada 2h5h9sThKd
+- Best hand: Nada (2h5h9sThKd)
 
 4dKdAd6sTs
-- Best hand: Nada 4d6sTsKdAd
+- Best hand: Nada (4d6sTsKdAd)
 
 5sAc7c9d5d
-- Best hand: Pareja 5d5s7c9dAc
+- Best hand: Pareja (5d5s7c9dAc)
 
 Qc2h3d8sKs
-- Best hand: Nada 2h3d8sQcKs
+- Best hand: Nada (2h3d8sQcKs)
 
 Td8d4h3s9c
-- Best hand: Nada 3s4h8d9cTd
+- Best hand: Nada (3s4h8d9cTd)
 - Draw: Straight Gutshot
 
 6s6hTs2c8d
-- Best hand: Pareja 2c6h6s8dTs
+- Best hand: Pareja (2c6h6s8dTs)
 
 9cAh9d6d6h
-- Best hand: Dobles Parejas 6d6h9d9cAh
+- Best hand: Dobles Parejas (6d6h9d9cAh)
 
 2c9s9h2dTc
-- Best hand: Dobles Parejas 2d2c9h9sTc
+- Best hand: Dobles Parejas (2d2c9h9sTc)
 
 5cQh3cAd2h
-- Best hand: Nada 2h3c5cQhAd
+- Best hand: Nada (2h3c5cQhAd)
 
 AcTdTh4c9d
-- Best hand: Pareja 4c9dThTdAc
+- Best hand: Pareja (4c9dThTdAc)
 
 Qd6hQs9cKs
-- Best hand: Pareja 6h9cQsQdKs
+- Best hand: Pareja (6h9cQsQdKs)
 
 2d9s6d4s3s
-- Best hand: Nada 2d3s4s6d9s
+- Best hand: Nada (2d3s4s6d9s)
 
 Kh4d5s3sTc
-- Best hand: Nada 3s4d5sTcKh
+- Best hand: Nada (3s4d5sTcKh)
 
 Qh8s4d4sKc
-- Best hand: Pareja 4d4s8sQhKc
+- Best hand: Pareja (4d4s8sQhKc)
 
 ThTcAdQd8h
-- Best hand: Pareja 8hTcThQdAd
+- Best hand: Pareja (8hTcThQdAd)
 
 5h4dJh4c5d
-- Best hand: Dobles Parejas 4c4d5h5dJh
+- Best hand: Dobles Parejas (4c4d5h5dJh)
 
 5c4s6h4d7c
-- Best hand: Pareja 4d4s5c6h7c
+- Best hand: Pareja (4d4s5c6h7c)
 - Draw: Straight Gutshot
 
 9sTd2cAhAs
-- Best hand: Pareja 2c9sTdAsAh
+- Best hand: Pareja (2c9sTdAsAh)
 
 TsJsThAd9c
-- Best hand: Pareja 9cThTsJsAd
+- Best hand: Pareja (9cThTsJsAd)
 
 Qc8h5sJd8d
-- Best hand: Pareja 5s8d8hJdQc
+- Best hand: Pareja (5s8d8hJdQc)
 
 Jd3d5c7d4s
-- Best hand: Nada 3d4s5c7dJd
+- Best hand: Nada (3d4s5c7dJd)
 
 4s7cKcQs9h
-- Best hand: Nada 4s7c9hQsKc
+- Best hand: Nada (4s7c9hQsKc)
 
 8c3c7c4c5c
-- Best hand: Color 3c4c5c7c8c
+- Best hand: Color (3c4c5c7c8c)
 - Draw: Flush
 
 6dKc4d9hJd
-- Best hand: Nada 4d6d9hJdKc
+- Best hand: Nada (4d6d9hJdKc)
 
 3s2sKdTd2h
-- Best hand: Pareja 2h2s3sTdKd
+- Best hand: Pareja (2h2s3sTdKd)
 
 4hTs3sKh2d
-- Best hand: Nada 2d3s4hTsKh
+- Best hand: Nada (2d3s4hTsKh)
 
 8c2h4sJh4d
-- Best hand: Pareja 2h4d4s8cJh
+- Best hand: Pareja (2h4d4s8cJh)
 
 3cJs2hAc9s
-- Best hand: Nada 2h3c9sJsAc
+- Best hand: Nada (2h3c9sJsAc)
 
 Qd7c6hKs6c
-- Best hand: Pareja 6h6c7cQdKs
+- Best hand: Pareja (6h6c7cQdKs)
 
 6sKh8dTc4c
-- Best hand: Nada 4c6s8dTcKh
+- Best hand: Nada (4c6s8dTcKh)
 
 9d2d7d9sJh
-- Best hand: Pareja 2d7d9s9dJh
+- Best hand: Pareja (2d7d9s9dJh)
 
 4d4s9dQd7c
-- Best hand: Pareja 4s4d7c9dQd
+- Best hand: Pareja (4s4d7c9dQd)
 
 9sJcKd2sKs
-- Best hand: Pareja 2s9sJcKsKd
+- Best hand: Pareja (2s9sJcKsKd)
 
 As3c9s6h6d
-- Best hand: Pareja 3c6h6d9sAs
+- Best hand: Pareja (3c6h6d9sAs)
 
 2c2sQhTd8d
-- Best hand: Pareja 2s2c8dTdQh
+- Best hand: Pareja (2s2c8dTdQh)
 
 Qc5dTc9dJs
-- Best hand: Nada 5d9dTcJsQc
+- Best hand: Nada (5d9dTcJsQc)
 - Draw: Straight Gutshot
 
 Qs2d9s4d3d
-- Best hand: Nada 2d3d4d9sQs
+- Best hand: Nada (2d3d4d9sQs)
 
 2hQs4h2c9h
-- Best hand: Pareja 2c2h4h9hQs
+- Best hand: Pareja (2c2h4h9hQs)
 
 3s3h3cJhJc
-- Best hand: Full House 3c3h3sJcJh
+- Best hand: Full House (3c3h3sJcJh)
 
 3c7hKs7c8d
-- Best hand: Pareja 3c7c7h8dKs
+- Best hand: Pareja (3c7c7h8dKs)
 
 7c2s8c2hQd
-- Best hand: Pareja 2h2s7c8cQd
+- Best hand: Pareja (2h2s7c8cQd)
 
 6c6sKcJsKd
-- Best hand: Dobles Parejas 6s6cJsKdKc
+- Best hand: Dobles Parejas (6s6cJsKdKc)
 
 JsTsTc6d3s
-- Best hand: Pareja 3s6dTcTsJs
+- Best hand: Pareja (3s6dTcTsJs)
 
 8dAd7cJsTh
-- Best hand: Nada 7c8dThJsAd
+- Best hand: Nada (7c8dThJsAd)
 
 8sAs9cJdKh
-- Best hand: Nada 8s9cJdKhAs
+- Best hand: Nada (8s9cJdKhAs)
 
 Qh5sJc7dTs
-- Best hand: Nada 5s7dTsJcQh
+- Best hand: Nada (5s7dTsJcQh)
 - Draw: Straight Gutshot
 
 KcTc5s4h9h
-- Best hand: Nada 4h5s9hTcKc
+- Best hand: Nada (4h5s9hTcKc)
 
 Ks8d6dTsTd
-- Best hand: Pareja 6d8dTsTdKs
+- Best hand: Pareja (6d8dTsTdKs)
 
 ThJh2c9h2h
-- Best hand: Pareja 2c2h9hThJh
+- Best hand: Pareja (2c2h9hThJh)
 - Draw: Straight Gutshot
 - Draw: Flush
 
 7h7s3c5s6s
-- Best hand: Pareja 3c5s6s7s7h
+- Best hand: Pareja (3c5s6s7s7h)
 - Draw: Straight Gutshot
 
 6d5s5dTc6s
-- Best hand: Dobles Parejas 5d5s6s6dTc
+- Best hand: Dobles Parejas (5d5s6s6dTc)
 
 2s4d6hKh7s
-- Best hand: Nada 2s4d6h7sKh
+- Best hand: Nada (2s4d6h7sKh)
 
 9sTcJdTd2c
-- Best hand: Pareja 2c9sTdTcJd
+- Best hand: Pareja (2c9sTdTcJd)
 
 5dAsKcKh7h
-- Best hand: Pareja 5d7hKhKcAs
+- Best hand: Pareja (5d7hKhKcAs)
 
 AcAs4d9h7h
-- Best hand: Pareja 4d7h9hAsAc
+- Best hand: Pareja (4d7h9hAsAc)
 
 2h8dTc8cAd
-- Best hand: Pareja 2h8c8dTcAd
+- Best hand: Pareja (2h8c8dTcAd)
 
 2hJh4s7hKd
-- Best hand: Nada 2h4s7hJhKd
+- Best hand: Nada (2h4s7hJhKd)
 
 As5hJh4d3s
-- Best hand: Nada 3s4d5hJhAs
+- Best hand: Nada (3s4d5hJhAs)
 
 4h8h9sQd8d
-- Best hand: Pareja 4h8d8h9sQd
+- Best hand: Pareja (4h8d8h9sQd)
 
 Qh7cAs3d2h
-- Best hand: Nada 2h3d7cQhAs
+- Best hand: Nada (2h3d7cQhAs)
 
 3c6d7hKs4c
-- Best hand: Nada 3c4c6d7hKs
+- Best hand: Nada (3c4c6d7hKs)
 
 4c9sJhAdTd
-- Best hand: Nada 4c9sTdJhAd
+- Best hand: Nada (4c9sTdJhAd)
 
 Kc6s7d2hTh
-- Best hand: Nada 2h6s7dThKc
+- Best hand: Nada (2h6s7dThKc)
 
 9sKsAhTc8s
-- Best hand: Nada 8s9sTcKsAh
+- Best hand: Nada (8s9sTcKsAh)
 
 5hAhQd9c3h
-- Best hand: Nada 3h5h9cQdAh
+- Best hand: Nada (3h5h9cQdAh)
 
 6c7d3c8s7s
-- Best hand: Pareja 3c6c7s7d8s
+- Best hand: Pareja (3c6c7s7d8s)
 
 AhJsKc8h7d
-- Best hand: Nada 7d8hJsKcAh
+- Best hand: Nada (7d8hJsKcAh)
 
 4c2dJcKc7h
-- Best hand: Nada 2d4c7hJcKc
+- Best hand: Nada (2d4c7hJcKc)
 
 JsAc3s8sKc
-- Best hand: Nada 3s8sJsKcAc
+- Best hand: Nada (3s8sJsKcAc)
 
 7hJcAs7sJh
-- Best hand: Dobles Parejas 7s7hJhJcAs
+- Best hand: Dobles Parejas (7s7hJhJcAs)
 
 3sJhKc5sJc
-- Best hand: Pareja 3s5sJcJhKc
+- Best hand: Pareja (3s5sJcJhKc)
 
 Ks4c2h4hTh
-- Best hand: Pareja 2h4h4cThKs
+- Best hand: Pareja (2h4h4cThKs)
 
 7sJcAdThQh
-- Best hand: Nada 7sThJcQhAd
+- Best hand: Nada (7sThJcQhAd)
 
 3s2cKh2hTc
-- Best hand: Pareja 2h2c3sTcKh
+- Best hand: Pareja (2h2c3sTcKh)
 
 Kc9dAs3hJc
-- Best hand: Nada 3h9dJcKcAs
+- Best hand: Nada (3h9dJcKcAs)
 
 3d7hJs3cTc
-- Best hand: Pareja 3c3d7hTcJs
+- Best hand: Pareja (3c3d7hTcJs)
 
 5d7s2s6s5c
-- Best hand: Pareja 2s5c5d6s7s
+- Best hand: Pareja (2s5c5d6s7s)
 - Draw: Straight Gutshot
 
 9s8dAcJcAd
-- Best hand: Pareja 8d9sJcAdAc
+- Best hand: Pareja (8d9sJcAdAc)
 
 Kc6hAd9dKd
-- Best hand: Pareja 6h9dKdKcAd
+- Best hand: Pareja (6h9dKdKcAd)
 
 2sKhJc5s3h
-- Best hand: Nada 2s3h5sJcKh
+- Best hand: Nada (2s3h5sJcKh)
 
 8c8hTh4c8s
-- Best hand: Trio 4c8s8c8hTh
+- Best hand: Trio (4c8s8c8hTh)
 
 6cQdTc7hJd
-- Best hand: Nada 6c7hTcJdQd
+- Best hand: Nada (6c7hTcJdQd)
 - Draw: Straight Gutshot
 
 3h9s2c7dAd
-- Best hand: Nada 2c3h7d9sAd
+- Best hand: Nada (2c3h7d9sAd)
 
 2hAd3h2cAs
-- Best hand: Dobles Parejas 2c2h3hAsAd
+- Best hand: Dobles Parejas (2c2h3hAsAd)
 
 KhQd6c3hAs
-- Best hand: Nada 3h6cQdKhAs
+- Best hand: Nada (3h6cQdKhAs)
 - Draw: Straight Gutshot
 
 2sQhTh5s8c
-- Best hand: Nada 2s5s8cThQh
+- Best hand: Nada (2s5s8cThQh)
 
 Kc3dKh9c6h
-- Best hand: Pareja 3d6h9cKcKh
+- Best hand: Pareja (3d6h9cKcKh)
 
 Td7c5h5d4h
-- Best hand: Pareja 4h5d5h7cTd
+- Best hand: Pareja (4h5d5h7cTd)
 
 9hQhKhTs6s
-- Best hand: Nada 6s9hTsQhKh
+- Best hand: Nada (6s9hTsQhKh)
 
 Ah9hKc7s5s
-- Best hand: Nada 5s7s9hKcAh
+- Best hand: Nada (5s7s9hKcAh)
 
 9c8c5cTcTs
-- Best hand: Pareja 5c8c9cTsTc
+- Best hand: Pareja (5c8c9cTsTc)
 - Draw: Flush
 
 3c6sThTd6h
-- Best hand: Dobles Parejas 3c6h6sTdTh
+- Best hand: Dobles Parejas (3c6h6sTdTh)
 
 6d3h7dJcQc
-- Best hand: Nada 3h6d7dJcQc
+- Best hand: Nada (3h6d7dJcQc)
 
 9hJd7dAhQh
-- Best hand: Nada 7d9hJdQhAh
+- Best hand: Nada (7d9hJdQhAh)
 
 7s4h2dKc6d
-- Best hand: Nada 2d4h6d7sKc
+- Best hand: Nada (2d4h6d7sKc)
 
 7sQc8sJd3d
-- Best hand: Nada 3d7s8sJdQc
+- Best hand: Nada (3d7s8sJdQc)
 
 8dTcAhJcJs
-- Best hand: Pareja 8dTcJcJsAh
+- Best hand: Pareja (8dTcJcJsAh)
 
 3hQcTs3c3d
-- Best hand: Trio 3c3d3hTsQc
+- Best hand: Trio (3c3d3hTsQc)
 
 Jc5s7sJd9d
-- Best hand: Pareja 5s7s9dJdJc
+- Best hand: Pareja (5s7s9dJdJc)
 
 TsQhTh6s8d
-- Best hand: Pareja 6s8dThTsQh
+- Best hand: Pareja (6s8dThTsQh)
 

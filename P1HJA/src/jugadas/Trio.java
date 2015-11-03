@@ -1,7 +1,5 @@
 package jugadas;
 
-import java.util.ArrayList;
-
 import carta.Carta;
 import carta.Mano;
 
@@ -23,28 +21,8 @@ public class Trio implements Jugadas {
 		this.kicker = new Carta[2];
 	}
 	
-	
 
-	@Override
-	public Jugadas getJugada(ArrayList<Carta> mano) {
-		int i = 0;
-		boolean encontrado = false;
-		
-		while (i < mano.size() -2 && !encontrado){
-			
-			if(mano.get(i).getNumero() == mano.get(i+1).getCodigo()
-					&& mano.get(i+1).getNumero() == mano.get(i+2).getCodigo()){
-				encontrado = true;
-				numTrio = mano.get(i).getNumero();
-			}
-			else 
-				numTrio = 0;
-			
-			i++;
-			
-		}
-		return new Trio(numTrio);
-	}
+	
 
 	@Override
 	public int getValorJugada() {
@@ -79,7 +57,7 @@ public class Trio implements Jugadas {
 	
 	public String toString() {
 		String cadena;
-		cadena = "Trio " + this.mano.toString();
+		cadena = "Trio (" + this.mano.toString() + ")";
 		return cadena;
 	}
 

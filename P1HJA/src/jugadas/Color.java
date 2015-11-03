@@ -1,7 +1,5 @@
 package jugadas;
 
-import java.util.ArrayList;
-
 import carta.Carta;
 import carta.Mano;
 
@@ -12,40 +10,13 @@ public class Color implements Jugadas {
 	private Mano mano;
 	private Carta[] kicker;
 	
-	public Color(int num){
-		num = numColor;
-	}
-	
-	
+
 	public Color(Mano mano, int numColor) {
 		this.mano = mano;
 		this.numColor = numColor;
 		this.kicker = new Carta[5];
 	}
 	
-	
-	@Override
-	public Jugadas getJugada(ArrayList<Carta> mano) {
-		int i;
-		boolean encontrado = false;
-		int iguales = 1;
-		
-		for(i = 0; i < mano.size() -1; i++){
-			
-			if(mano.get(i).getPalo() == mano.get(i+1).getPalo()){
-				iguales++;
-			}
-			if (iguales == 5){
-				/*Cogemos la mayor carta del color*/
-				numColor = mano.get(0).getNumero();
-			}
-			else
-				numColor = 0;
-		}	
-			
-		return new Color(numColor);
-	}
-
 	@Override
 	public int getValorJugada() {
 		// TODO Auto-generated method stub
@@ -82,7 +53,7 @@ public class Color implements Jugadas {
 	
 	public String toString() {
 		String cadena;
-		cadena = "Color " + this.mano.toString();
+		cadena = "Color (" + this.mano.toString() + ")";
 		return cadena;
 	}
 

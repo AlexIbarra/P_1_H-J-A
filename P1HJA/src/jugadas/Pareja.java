@@ -1,7 +1,5 @@
 package jugadas;
 
-import java.util.ArrayList;
-
 import carta.Carta;
 import carta.Mano;
 
@@ -12,9 +10,7 @@ public class Pareja implements Jugadas {
 	private int numPareja;
 	private Carta[] kicker;
 	
-//	public Pareja(int num){
-//		num = numPareja;
-//	}
+
 	
 	public Pareja(Mano mano, int numPareja) {
 		this.mano = mano;
@@ -22,28 +18,7 @@ public class Pareja implements Jugadas {
 		this.kicker = new Carta[3];
 	}
 	
-	@Override
-	public Jugadas getJugada(ArrayList<Carta> mano) {
-		
-		int i=0;
-		boolean encontrado = false;
-		while (i < mano.size() - 1 && !encontrado){
-			if (mano.get(i).getNumero() == mano.get(i+1).getNumero()){
-				/*Con esta asigancion sabes de que numero es la pareja*/
-				numPareja = mano.get(i).getNumero();
-				encontrado = true;
-			}
-			else
-				numPareja =0;
-			
-			i++;
-		}
-		
-		/*tenemos que ver bien como hacer la codificacion del valor de las jugadas*/
-		valorJugada = numPareja-1 ; //En este caso de la pareja son iguales-1
-		return null;
-	}
-	
+
 	@Override
 	public int getValorJugada() {
 		return valorJugada;
@@ -62,7 +37,7 @@ public class Pareja implements Jugadas {
 	}
 	
 	public String toString(){
-		return "Pareja " + this.mano.toString();	
+		return "Pareja (" + this.mano.toString() + ")";	
 	}
 
 	/* Metodo encargado de buscar y asignar el kicker */

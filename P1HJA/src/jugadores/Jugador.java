@@ -28,10 +28,7 @@ public class Jugador {
 		this.mejorJugada = jugada;
 		this.valor = this.mejorJugada.getValorJugada();
 	}
-	
-//	private void setPuesto() {
-//		this.puesto = this.mejorJugada.getValorJugada();
-//	}
+
 	
 	public int getValorJugador() {
 		return this.valor;
