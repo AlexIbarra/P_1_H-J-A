@@ -53,7 +53,7 @@ public class Color implements Jugadas {
 	
 	public String toString() {
 		String cadena;
-		cadena = "Color (" + this.mano.toString() + ")";
+		cadena = "Color con kicker " +  this.mano.getNombreCarta(this.numColor) + " (" + this.mano.toString() + ")";
 		return cadena;
 	}
 

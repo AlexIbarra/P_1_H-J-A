@@ -97,7 +97,7 @@ public class ParserJugadas {
 				this.mejorJugada = new FullHouse(mano, this.Trio, this.Pareja);
 			}else if(!esEscaleraColor(mano)){
 				if(!esColor(mano)){
-					if(!esEscalera(mano)){
+					if(!esEscalera(mano) && !esEscaleraAs(mano)){
 						if(encontrdoTrio){
 							mano.setUsada(posTrio-2, true);
 							mano.setUsada(posTrio-1, true);
@@ -138,6 +138,33 @@ public class ParserJugadas {
 //////////////////////// FUNCIONES PARA COMPROBAR LAS JUGADAS /////////////////////////
 ////////////////////////                                      /////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////	
+	
+	
+	
+	private boolean esEscaleraAs(Mano mano) {
+		boolean encontrado = false;
+		int i = mano.getMano().size()-1;
+
+		if(this.codigo[i] == 14)
+			while ( i > 3 && !encontrado) {
+				if(this.codigo[i-1] == 5 || this.codigo[i-2] == 5 || this.codigo[i-3] == 5) 
+						if(this.codigo[i-2] == 4)
+							if(this.codigo[i-3] == 3)
+								if(this.codigo[i-4] == 2) {
+			
+									encontrado = true;
+									mano.setUsada(i-4, true);
+									mano.setUsada(i-3, true);
+									mano.setUsada(i-2, true);
+									mano.setUsada(i-1, true);
+									mano.setUsada(i, true);
+									this.mejorJugada = new Escalera(mano, this.codigo[i]);
+								}
+								i--;
+			}
+		return encontrado;
+	}
+	
 	
 	
 	
@@ -200,27 +227,35 @@ public class ParserJugadas {
 	}
 
 	
-
+	
+	
 	
 	private boolean esEscalera(Mano mano) {
 		boolean encontrado = false;
 		int i = mano.getMano().size()-1;
-		while ( i > 3 && !encontrado){
-			if(this.codigo[i] == this.codigo[i-1]+1 && 
-					this.codigo[i-1] == this.codigo[i-2]+1 &&
-							this.codigo[i-2] == this.codigo[i-3]+1 &&
-									this.codigo[i-3] == this.codigo[i-4]+1) {
-				
-				encontrado = true;
-				mano.setUsada(i-4, true);
-				mano.setUsada(i-3, true);
-				mano.setUsada(i-2, true);
-				mano.setUsada(i-1, true);
-				mano.setUsada(i, true);
-				this.mejorJugada = new Escalera(mano, this.codigo[i]);
+		int j = 1;
+		int[] usados = new int [5];
+		int cont = 0;
+		while(j <= i)
+		{
+			if(cont < 5 && (this.codigo[i-(j-1)] == this.codigo[i-j]+1))
+			{
+				usados[cont] = i-(j-1);
+				cont++;
+				if(cont < 5)
+					usados[cont] = i-j;
 			}
-			i--;
+			j++;
 		}
+		if(cont == 4 && this.codigo[usados[0]] == this.codigo[usados[4]+4])
+		{
+			for(int k = cont; k >= 0; k--)
+			{
+				mano.setUsada(usados[k],true);
+			}
+			encontrado = true;
+		}	
+		this.mejorJugada = new Escalera(mano, this.codigo[i]);
 		return encontrado;
 	}
 	

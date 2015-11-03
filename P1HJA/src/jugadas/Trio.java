@@ -57,7 +57,7 @@ public class Trio implements Jugadas {
 	
 	public String toString() {
 		String cadena;
-		cadena = "Trio (" + this.mano.toString() + ")";
+		cadena = "Trio de " + this.mano.getNombreCarta(this.numTrio) + " (" + this.mano.toString() + ")";
 		return cadena;
 	}
 

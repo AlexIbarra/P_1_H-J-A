@@ -36,8 +36,8 @@ public class Pareja implements Jugadas {
 		
 	}
 	
-	public String toString(){
-		return "Pareja (" + this.mano.toString() + ")";	
+	public String toString() {
+		return "Pareja de " + this.mano.getNombreCarta(this.numPareja) + " (" + this.mano.toString() + ")";	
 	}
 
 	/* Metodo encargado de buscar y asignar el kicker */

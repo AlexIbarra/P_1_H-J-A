@@ -49,7 +49,7 @@ public class Escalera implements Jugadas{
 	
 	public String toString() {
 		String cadena;
-		cadena = "Escalera (" + this.mano.toString() + ")";
+		cadena = "Escalera con kicker " + this.mano.getNombreCarta(this.numEscalera) + " (" + this.mano.toString() + ")";
 		return cadena;
 	}
 

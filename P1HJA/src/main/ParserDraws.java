@@ -1,4 +1,5 @@
 package main;
+
 import carta.Mano;
 
 public class ParserDraws {
@@ -35,42 +36,52 @@ public class ParserDraws {
 	
 	private boolean drawEscalera(Mano mano) {
 		boolean encontrado = false;
+		boolean saltoDos = false;
+		int[] usados = new int [4];
 		int i = mano.getMano().size()-1;
 		int j;
 		int cont = 0;
 		if((i == 4)||(i==5))
 		{
-			while ( i > 2 && !encontrado)
+			j = 1;
+			while(j <= i)
 			{
-				j = 1;
-				while((j <= 4)&&(j <= i))
+				if(cont < 4 && (mano.getMano().get(i-(j-1)).getCodigo() == mano.getMano().get(i-j).getCodigo()+1))
 				{
-					if(mano.getMano().get(i).getCodigo() == mano.getMano().get(i-j).getCodigo()+j)
-					{
-						cont++;
-					}
-					j++;
+					usados[cont] = i-(j-1);
+					cont++;
+					if(cont < 4)
+						usados[cont] = i-j;
 				}
-				if(cont == 3)
+				else if(cont < 4 && (mano.getMano().get(i-(j-1)).getCodigo() == mano.getMano().get(i-j).getCodigo()+2)&&(!saltoDos))
 				{
-					encontrado = true;
+					usados[cont] = i-(j-1);
+					cont++;
+					if(cont < 4)
+						usados[cont] = i-j;
+					saltoDos = true;
 				}
-				i--;
+				j++;
+			}
+			if(cont == 3 && mano.getMano().get(usados[0]).getCodigo() == mano.getMano().get(usados[3]+3).getCodigo())
+			{
+				encontrado = true;
 			}
 		}
-		return encontrado;
-	}
+	return encontrado;
+}	
 	
 	
 	
 	private boolean drawColor(Mano mano) {
 		boolean encontrado = false;
+		boolean cuatroEncontrado = false;
 		int i = mano.getMano().size()-1;
 		int j;
 		int cont = 0;
 		if((i == 4)||(i==5))
 		{
-			while (i >2 && !encontrado)
+			while (i >2 && !encontrado && !cuatroEncontrado)
 			{
 				j = 1;
 				cont = 0;
@@ -81,6 +92,10 @@ public class ParserDraws {
 						cont++;
 					}
 					j++;
+				}
+				if(cont == 4)
+				{
+					cuatroEncontrado = true;
 				}
 				if(cont == 3)
 				{
@@ -97,27 +112,29 @@ public class ParserDraws {
 	
 	private boolean drawEscaleraColor(Mano mano){
 		boolean encontrado = false;
+		boolean saltoDos = false;
 		int i = mano.getMano().size()-1;
 		int j;
 		int cont = 0;
 		if((i==4)||(i==5))
 		{
-			while ( i > 2 && !encontrado)
+			j = 1;
+			while(j <= i)
 			{
-				j = 1;
-				while((j <= 4)&&(j <= i))
+				if((mano.getMano().get(i-(j-1)).getCodigo() == mano.getMano().get(i-j).getCodigo()+1)&&(mano.getMano().get(i-(j-1)).getPalo() == (mano.getMano().get(i-j).getPalo())))
 				{
-					if((mano.getMano().get(i).getCodigo() == mano.getMano().get(i-j).getCodigo()-j)&&(mano.getMano().get(i).getPalo()== mano.getMano().get(i-j).getPalo()))
-					{
-						cont++;
-					}
-					j++;
+					cont++;
 				}
-				if(cont == 3)
+				else if((mano.getMano().get(i-(j-1)).getCodigo() == mano.getMano().get(i-j).getCodigo()+2)&&(!saltoDos)&&(mano.getMano().get(i-(j-1)).getPalo() == mano.getMano().get(i-j).getPalo()))
 				{
-					encontrado = true;
+					cont++;
+					saltoDos = true;
 				}
-				i--;
+				j++;
+			}
+			if(cont == 3)
+			{
+				encontrado = true;
 			}
 		}
 		return encontrado;

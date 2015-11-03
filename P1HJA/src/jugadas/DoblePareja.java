@@ -53,7 +53,7 @@ public class DoblePareja implements Jugadas {
 	
 	public String toString() {
 		String cadena;
-		cadena = "Dobles Parejas (" + this.mano.toString() + ")";
+		cadena = "Dobles Parejas de " +  this.mano.getNombreCarta(this.numDoble1) + " y " +  this.mano.getNombreCarta(this.numDoble2) + " (" + this.mano.toString() + ")";
 		return cadena;
 	}
 

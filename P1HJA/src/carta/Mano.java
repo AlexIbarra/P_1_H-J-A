@@ -1,13 +1,17 @@
 package carta;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Mano {
 	
 	private ArrayList<Carta> mano;
+	private HashMap<Integer, String> valores;
 	
 	public Mano(){
 		this.mano = new ArrayList<Carta>();
+		this.valores = new HashMap<Integer, String>();
+		setHashMap();
 	}
 	
 	public void setMano(Carta carta) {
@@ -50,6 +54,24 @@ public class Mano {
 		}
 	}
 	
+	
+	private void setHashMap() {
+		this.valores.put(new Integer(14), new String("As"));
+		this.valores.put(new Integer(13), new String("Rey"));
+		this.valores.put(new Integer(12), new String("Dama"));
+		this.valores.put(new Integer(11), new String("Jota"));
+		this.valores.put(new Integer(10), new String("Diez"));
+		this.valores.put(new Integer(9), new String("Nueve"));
+		this.valores.put(new Integer(8), new String("Ocho"));
+		this.valores.put(new Integer(7), new String("Siete"));
+		this.valores.put(new Integer(6), new String("Seis"));
+		this.valores.put(new Integer(5), new String("Cinco"));
+		this.valores.put(new Integer(4), new String("Cuatro"));
+		this.valores.put(new Integer(3), new String("Tres"));
+		this.valores.put(new Integer(2), new String("Dos"));
+	}
+	
+	
 	public String toString() {
 		String cadena = new String();
 		for(int i=0; i < this.mano.size(); i++) {
@@ -59,6 +81,12 @@ public class Mano {
 		}
 		return cadena;
 	}
+	
+	
+	public String getNombreCarta(int n) {
+		return this.valores.get(n);
+	}
+	
 	
 	public void ordenaMano(int lowerIndex, int higherIndex) {
 		int i = lowerIndex;

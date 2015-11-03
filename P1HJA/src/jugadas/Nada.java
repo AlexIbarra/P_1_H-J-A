@@ -52,7 +52,7 @@ public class Nada implements Jugadas {
 	
 	public String toString() {
 		String cadena;
-		cadena = "Nada (" + this.mano.toString() + ")";
+		cadena = "Carta mas alta " + this.mano.getNombreCarta(this.numNada) + " (" + this.mano.toString() + ")";
 		return cadena;
 	}
 

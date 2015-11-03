@@ -55,7 +55,7 @@ public class EscaleraColor implements Jugadas{
 
 	public String toString() {
 		String cadena;
-		cadena = "Escalera de Color (" + this.mano.toString() + ")";
+		cadena = "Escalera de Color con kicker " + this.mano.getNombreCarta(this.numEscaleraColor) + " (" + this.mano.toString() + ")";
 		return cadena;
 	}
 

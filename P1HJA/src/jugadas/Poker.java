@@ -52,7 +52,7 @@ public class Poker implements Jugadas {
 	
 	public String toString() {
 		String cadena;
-		cadena = "Poker (" + this.mano.toString() + ")";
+		cadena = "Poker de " + this.mano.getNombreCarta(this.numPoker) + " (" + this.mano.toString() + ")";
 		return cadena;
 	}
 

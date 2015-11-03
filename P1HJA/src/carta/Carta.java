@@ -9,7 +9,7 @@ public class Carta {
 	private int codigo;	// codigo asignado a la carta (segun su numero)
 	private boolean usada;
 	private int kicker;
-	private HashMap<Character, Integer> valores;// = new Hashtable<Integer,String>()
+	private HashMap<Character, Integer> valores;
 	
 	public Carta (char num, char p){
 		

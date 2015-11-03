@@ -41,7 +41,7 @@ public class FullHouse implements Jugadas {
 	
 	public String toString() {
 		String cadena;
-		cadena = "Full House (" + this.mano.toString() + ")";
+		cadena = "Full House de " + this.mano.getNombreCarta(this.numTrio) + " y " + this.mano.getNombreCarta(this.numPareja) + " (" + this.mano.toString() + ")";
 		return cadena;
 	}
 
