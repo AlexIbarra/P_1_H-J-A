@@ -1,13 +1,13 @@
 # P_1_H-J-A
 
-Asignatura: Herramientas informáticas para juegos de azar. Práctica 1
+<p><strong>Asignatura</strong>: Herramientas informáticas para juegos de azar. Práctica 1</p>
 
 
-Objetivo: Aplicación que calcula el valor de una mano en el juego NLHE.
+<p><strong>Objetivo</strong>: Aplicación que calcula el valor de una mano en el juego NLHE.</p>
 
 Tipos de entradas y salidas:
 
-A) Indicar la mejor jugada dadas 5 cartas:
+<p><strong>A) Indicar la mejor jugada dadas 5 cartas:</strong></p>
    
    Ejemplo de fichero de entrada "entrada.txt"--> AhAcQhJhTh*
    
@@ -23,7 +23,7 @@ A) Indicar la mejor jugada dadas 5 cartas:
    - Draw: Straight Gutshot
    - Draw Flush
 
-B) Indicar la mejor jugada teniendo 2 cartas propias y 3, 4 o 5 cartas comunes (Carta_1Carta_2;n;CartasComunes):
+<strong>B) Indicar la mejor jugada teniendo 2 cartas propias y 3, 4 o 5 cartas comunes (Carta_1Carta_2;n;CartasComunes):</strong>
    
    Ejemplo de fichero de entrada --> AhAc;3;QhJhTh
                                      AhAc;5;As2s3h4dJd*
@@ -42,8 +42,7 @@ B) Indicar la mejor jugada teniendo 2 cartas propias y 3, 4 o 5 cartas comunes (
    AhAc;5;As2s3h4dJd
    - Best hand: Three of a kind (Aces) with AhAcAs4dJd
 
-C) Dados n jugadores (2 <= n <= 9) con 2 cartas cada uno y 5 cartas comunes, ordenar los jugadores de mejor a peor mano:
-   (N;J1CartasJug1;J2CartasJug2;...;JNCartasJugN;CartasComunes)
+<strong>C) Dados n jugadores (2 <= n <= 9) con 2 cartas cada uno y 5 cartas comunes, ordenar los jugadores de mejor a peor mano: (N;J1CartasJug1;J2CartasJug2;...;JNCartasJugN;CartasComunes) </strong>
    
    Donde:
         N es el número de jugadores presentes en la mano
